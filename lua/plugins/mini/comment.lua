@@ -1,4 +1,9 @@
 -- No need to copy this inside `setup()`. Will be used automatically.
+local custom_commentstring = {
+	{ "conf", "# %s" },
+	{ "sql", "-- %s" },
+}
+
 require("mini.comment").setup({
 	-- Options which control module behavior
 	options = {
@@ -40,3 +45,12 @@ require("mini.comment").setup({
 		post = function() end,
 	},
 })
+
+for _, v in ipairs(custom_commentstring) do
+	vim.api.nvim_create_autocmd("FileType", {
+		pattern = v[1],
+		callback = function()
+			vim.bo.commentstring = v[2]
+		end,
+	})
+end
