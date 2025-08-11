@@ -19,6 +19,7 @@ lspconfig.cssls.setup({
 	filetypes = {
 		"css",
 		"scss",
+		"sass",
 		"less",
 		"html",
 		"javascriptreact",

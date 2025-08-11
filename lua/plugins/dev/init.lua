@@ -17,8 +17,30 @@ require("plugins.dev.snippets.luasnip")
 -- keymaps
 require("plugins.dev.keymaps")
 
-local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+local signs = {
+	Error = " ",
+	Warn = " ",
+	Hint = " ",
+	Info = " ",
+}
+
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+
+-- Diagnostics configuration
+vim.diagnostic.config({
+	virtual_text = true, -- Show inline error/warning messages after the code
+	update_in_insert = false, -- Do not update diagnostics while typing (in insert mode)
+	underline = true, -- Underline problematic code sections
+	severity_sort = true, -- Sort diagnostics by severity
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.INFO] = "",
+			[vim.diagnostic.severity.HINT] = "󰌵",
+		},
+	},
+})

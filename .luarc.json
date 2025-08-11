@@ -1,5 +1,6 @@
 {
-  "diagnostics.globals": ["vim", "self", "opts"],
+  "diagnostics.globals": ["vim", "self", "opts",
+        "diff_Node"],
   "diagnostics.disable": [
     "unused-local",
     "inject-field",

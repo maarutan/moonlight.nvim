@@ -31,7 +31,7 @@ require("plugins.ai.codeium.codeium")
 ---- [ ui ]
 require("plugins.ui.split_resizer")
 -- require("plugins.ui.neoscroll")
-require("plugins.ui.lualine")
+require("plugins.ui.lualine.init")
 require("plugins.ui.bufferline")
 require("plugins.ui.noice")
 require("plugins.ui.scroll_view")

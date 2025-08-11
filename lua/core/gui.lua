@@ -23,11 +23,11 @@ vim.o.termguicolors = true -- Enable true color support
 local bind = vim.keymap.set
 bind("n", "<C-S-=>", function()   -- Increase font size
 	vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1
-end
+end,
 
 bind("n", "<C-S-->", function()  -- Decrease font size
 	vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1
-end
+end,
 
 bind("n", "<F11>", function() -- toggle fullscreen
 	vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen 

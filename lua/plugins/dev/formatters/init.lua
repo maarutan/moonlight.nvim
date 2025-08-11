@@ -25,6 +25,8 @@ require("formatter").setup({
 		css = { prettierd.format },
 		json = { prettierd.format },
 		markdown = { prettierd.format },
+		sass = { prettierd.format },
+		scss = { prettierd.format },
 
 		---------------
 		-- prettier --

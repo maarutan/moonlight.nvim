@@ -1,0 +1,1 @@
+return { "diff", icon = "" }
