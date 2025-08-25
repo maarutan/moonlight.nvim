@@ -6,6 +6,12 @@
 
 -- General options --
 local border = "single" -- "rounded" | "single" | "double"  | "none"
+local signs = {
+	error = "",
+	warn = "",
+	hint = "",
+	info = "",
+}
 vim.loader.enable() -- fast loader.
 --- vim.opt.loadplugins = false -- Disable loading of plugins
 vim.opt.syntax = "off" -- Disable syntax highlighting
@@ -96,4 +102,5 @@ vim.cmd([[cabbrev W w]])
 
 return {
 	border = border,
+	signs = signs,
 }

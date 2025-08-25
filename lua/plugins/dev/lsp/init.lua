@@ -14,6 +14,7 @@ local filenames = {
 	"nix",
 	"rust",
 	"django",
+	"sass",
 }
 
 for _, i in ipairs(filenames) do

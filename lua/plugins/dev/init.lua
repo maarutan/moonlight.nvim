@@ -1,3 +1,4 @@
+local signs = require("core.options").signs
 -- programming language
 require("plugins.dev.lsp.init")
 
@@ -17,13 +18,6 @@ require("plugins.dev.snippets.luasnip")
 -- keymaps
 require("plugins.dev.keymaps")
 
-local signs = {
-	Error = " ",
-	Warn = " ",
-	Hint = " ",
-	Info = " ",
-}
-
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -37,10 +31,10 @@ vim.diagnostic.config({
 	severity_sort = true, -- Sort diagnostics by severity
 	signs = {
 		text = {
-			[vim.diagnostic.severity.ERROR] = "",
-			[vim.diagnostic.severity.WARN] = "",
-			[vim.diagnostic.severity.INFO] = "",
-			[vim.diagnostic.severity.HINT] = "󰌵",
+			[vim.diagnostic.severity.ERROR] = signs.error,
+			[vim.diagnostic.severity.WARN] = signs.warn,
+			[vim.diagnostic.severity.INFO] = signs.info,
+			[vim.diagnostic.severity.HINT] = signs.hint,
 		},
 	},
 })

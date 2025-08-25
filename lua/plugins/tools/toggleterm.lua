@@ -1,5 +1,5 @@
 local border = require("core.options").border
-local direction = "horizontal" -- 'vertical' | 'horizontal' | 'float'
+local direction = "float" -- 'vertical' | 'horizontal' | 'float'
 local size = 20
 
 if direction == "vertical" then

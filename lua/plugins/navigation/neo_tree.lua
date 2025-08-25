@@ -1,13 +1,14 @@
 local border = require("core.options").border
+local signs = require("core.options").signs
 local inputs = require("neo-tree.ui.inputs")
 
 vim.diagnostic.config({
 	signs = {
 		text = {
-			[vim.diagnostic.severity.ERROR] = "",
-			[vim.diagnostic.severity.WARN] = "",
-			[vim.diagnostic.severity.INFO] = "",
-			[vim.diagnostic.severity.HINT] = "",
+			[vim.diagnostic.severity.ERROR] = signs.error,
+			[vim.diagnostic.severity.WARN] = signs.warn,
+			[vim.diagnostic.severity.INFO] = signs.info,
+			[vim.diagnostic.severity.HINT] = signs.hint,
 		},
 	},
 })

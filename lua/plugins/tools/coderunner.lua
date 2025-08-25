@@ -1,7 +1,7 @@
 local direction = require("plugins.tools.toggleterm").direction
 
 require("code-runner").setup({
-	keymap = "<A-S-r>",
+	keymap = "<A-r>",
 	interrupt_keymap = "<F2>",
 	terminal_mode = direction, -- Default terminal mode
 	commands = {
