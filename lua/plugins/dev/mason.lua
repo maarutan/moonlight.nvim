@@ -27,6 +27,7 @@ require("mason-tool-installer").setup({
 		"html-lsp", -- HTML
 		"emmet-ls", -- Emmet
 		"css-lsp", -- CSS
+		"some-sass-language-server", -- SASS
 		"clangd", -- C/C++
 		"lua-language-server", -- Lua
 		"marksman", -- Markdown
