@@ -10,38 +10,45 @@ local import_modules = {
 	"lsp_status",
 	"codeium",
 	"copilot",
+	"visual_mode_progress",
+	"last_color",
 }
 local import_core = {
 	"options",
 }
-
 local function lualine(m)
 	require("lualine").setup({
-
 		options = m.options,
 		sections = {
 			lualine_a = { m.mode_preview },
-			lualine_b = { m.git_branch, m.git_diff, m.lsp_diagnostics, m.lsp_status },
-			lualine_c = { "filename", m.repo_preview, m.dadbod_preview },
+			lualine_b = {
+				m.git_branch,
+				m.git_diff,
+				m.lsp_diagnostics,
+				m.lsp_status,
 
-			lualine_x = {
-				"encoding",
-				"fileformat",
-				"filetype",
-				m.codeium,
+				{
+					"lsp_status",
+					icon = "  LSP:",
+					color = { fg = "#ffffff", gui = "bold" },
+					symbols = {
+						spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
+						done = "",
+					},
+				},
 			},
-			lualine_y = { "progress" },
+			lualine_c = { "filename", m.repo_preview, m.dadbod_preview },
+			lualine_x = { m.last_color, "encoding", "fileformat", "filetype", m.codeium },
+			lualine_y = { m.noice_endered_command, "progress" },
 			lualine_z = {
-
-				-- m.copilot,
 				"location",
 			},
 		},
 		inactive_sections = {
 			lualine_a = {},
-			lualine_b = { m.noice_endered_command },
+			lualine_b = {},
 			lualine_c = { "filename" },
-			lualine_x = { "location" },
+			lualine_x = {},
 			lualine_y = {},
 			lualine_z = {},
 		},
