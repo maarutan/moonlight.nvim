@@ -8,7 +8,7 @@ local function get_python_path()
 	end
 end
 
--- Настройка Pyright
+-- configure Pyright
 lspconfig.pyright.setup({
 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 	settings = {
