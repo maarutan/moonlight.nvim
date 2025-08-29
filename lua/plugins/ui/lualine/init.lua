@@ -10,7 +10,6 @@ local import_modules = {
 	"lsp_status",
 	"codeium",
 	"copilot",
-	"visual_mode_progress",
 	"last_color",
 }
 local import_core = {
@@ -33,7 +32,7 @@ local function lualine(m)
 					color = { fg = "#ffffff", gui = "bold" },
 					symbols = {
 						spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
-						done = "",
+						done = "✓",
 					},
 				},
 			},

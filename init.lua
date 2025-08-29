@@ -10,7 +10,7 @@ require("core.lazy.lazy_manager")
 
 ----------- PLUGIN -------------
 ---- [ navigation ]
-require("plugins.navigation.neo_tree")
+require("plugins.navigation.neo_tree.init")
 require("plugins.navigation.hop")
 require("plugins.navigation.telescope") -- disable because  use ( Snacks -  picker )
 
@@ -30,6 +30,7 @@ require("plugins.ai.codeium.codeium")
 
 ---- [ ui ]
 require("plugins.ui.split_resizer")
+require("plugins.ui.web_devicons")
 -- require("plugins.ui.neoscroll")
 require("plugins.ui.lualine.init")
 require("plugins.ui.bufferline")

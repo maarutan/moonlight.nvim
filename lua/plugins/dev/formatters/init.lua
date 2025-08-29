@@ -7,6 +7,7 @@ local black = require("plugins.dev.formatters.modules.black")
 local clang_format = require("plugins.dev.formatters.modules.clang_format")
 local alejandra = require("plugins.dev.formatters.modules.alejandra")
 local rustfmt = require("plugins.dev.formatters.modules.rustfmt")
+local sass_formatter = require("plugins.dev.formatters.modules.sass_formatter")
 
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
@@ -16,30 +17,32 @@ require("formatter").setup({
 		---------------
 		-- prettierd --
 		---------------
-		javascript = { prettierd.format },
-		typescript = { prettierd.format },
-		typescriptreact = { prettierd.format },
-		javascriptreact = { prettierd.format },
-		html = { prettierd.format },
-		htmldjango = { prettierd.format },
-		css = { prettierd.format },
-		json = { prettierd.format },
-		markdown = { prettierd.format },
-		sass = { prettierd.format },
-		scss = { prettierd.format },
+		-- javascript = {
+		-- typescript = { prettierd.format },
+		-- typescriptreact = { prettierd.format },
+		-- javascriptreact = { prettierd.format },
+		-- html = { prettierd.format },
+		-- htmldjango = { prettierd.format },
+		-- css = { prettierd.format },
+		-- json = { prettierd.format },
+		-- jsonc = { prettierd.format },
+		-- markdown = { prettierd.format },
+		-- scss = { prettierd.format },
 
 		---------------
 		-- prettier --
 		---------------
-		-- javascript = { prettier.format },
-		-- typescript = { prettier.format },
-		-- typescriptreact = { prettier.format },
-		-- javascriptreact = { prettier.format },
-		-- html = { prettier.format },
-		-- htmldjango = { prettier.format },
-		-- css = { prettier.format },
-		-- json = { prettier.format },
-		-- markdown = { prettier.format },
+		javascript = { prettier.format },
+		typescript = { prettier.format },
+		typescriptreact = { prettier.format },
+		javascriptreact = { prettier.format },
+		html = { prettier.format },
+		htmldjango = { prettier.format },
+		css = { prettier.format },
+		json = { prettier.format },
+		markdown = { prettier.format },
+		scss = { prettier.format },
+		jsonc = { prettier.format },
 
 		----------
 		-- ruff --
@@ -78,6 +81,11 @@ require("formatter").setup({
 		-- rust --
 		----------
 		rust = { rustfmt.format },
+
+		----------
+		-- sass --
+		----------
+		sass = { sass_formatter.format },
 	},
 })
 

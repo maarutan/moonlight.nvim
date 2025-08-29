@@ -2,7 +2,7 @@ local M = {}
 
 M.format = function()
 	local script_path = debug.getinfo(1, "S").source:sub(2):match("(.*/)")
-	local config_path = script_path .. ".config/.djlintrc"
+	local config_path = script_path .. "cfg/.prettierrc"
 
 	return {
 		exe = "prettier",

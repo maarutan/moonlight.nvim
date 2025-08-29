@@ -1,30 +1,14 @@
 local border = require("core.options").border
 local signs = require("core.options").signs
 local inputs = require("neo-tree.ui.inputs")
-
-local function witch(command)
-	return vim.fn.executable(command) == 1
-end
-
-local function smoothScroll(key, delay, stop_int)
-	local timer = vim.loop.new_timer()
-	local line_count = vim.api.nvim_buf_line_count(0)
-	local counter = 0
-	timer:start(
-		0,
-		delay,
-		vim.schedule_wrap(function()
-			counter = counter + 1
-			vim.cmd("normal! " .. key)
-
-			if counter == stop_int then
-				counter = 0
-				timer:stop()
-				timer:close()
-			end
-		end)
-	)
-end
+local whitch = require("plugins.navigation.neo_tree.utils").witch
+local smoothScroll = require("plugins.navigation.neo_tree.utils").smoothScroll
+local events = require("plugins.navigation.neo_tree.events").event_handlers
+local scrollup = require("plugins.navigation.neo_tree.commands").scrollup
+local scrolldown = require("plugins.navigation.neo_tree.commands").scrolldown
+local trash = require("plugins.navigation.neo_tree.commands").trash
+local mappings = require("plugins.navigation.neo_tree.mappings")
+local resotre = require("plugins.navigation.neo_tree.commands").resotre
 
 require("neo-tree").setup({
 	retain_hidden_root_indent = true, -- IF the root node is hidden, keep the indentation anyhow.
@@ -34,7 +18,7 @@ require("neo-tree").setup({
 	filesystem = {
 		filtered_items = {
 			hide_by_name = {
-				--"node_modules"
+				"node_modules",
 				".venv",
 				".venv",
 				"venv",
@@ -50,33 +34,7 @@ require("neo-tree").setup({
 				noremap = true,
 				nowait = true,
 			},
-			mappings = {
-
-				["L"] = "set_root",
-				["H"] = "navigate_up",
-				["."] = "abs_path",
-				["D"] = "diff_files",
-				-- ["r"] = "rename",
-
-				["<C-u>"] = "scrollup",
-				["<C-d>"] = "scrolldown",
-
-				["d"] = "trash",
-				["u"] = "restore",
-
-				["<C-h>"] = "toggle_hidden",
-
-				["f"] = "fuzzy_finder",
-				["P"] = {
-					"toggle_preview",
-					config = {
-						use_float = true,
-						use_image_nvim = true,
-					},
-				},
-
-				["l"] = "open",
-			},
+			mappings = mappings,
 		},
 	},
 
@@ -91,73 +49,15 @@ require("neo-tree").setup({
 			{ source = "buffers", display_name = "󱚀  Buffers" },
 		},
 	},
-	event_handlers = {
-		{
-			event = "neo_tree_buffer_enter",
-			handler = function(arg)
-				vim.cmd([[
-              setlocal relativenumber
-            ]])
-			end,
-		},
-
-		{
-			event = require("neo-tree.events").FILE_OPENED,
-			handler = function()
-				for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-					if vim.api.nvim_buf_get_name(buf) == "" and vim.api.nvim_buf_get_option(buf, "buftype") == "" then
-						vim.api.nvim_buf_delete(buf, { force = true })
-					end
-				end
-			end,
-		},
-		{
-			event = require("neo-tree.events").FILE_MOVED,
-			handler = function(data)
-				require("snacks.rename").on_rename_file(data.source, data.destination)
-			end,
-		},
-		{
-			event = require("neo-tree.events").FILE_RENAMED,
-			handler = function(data)
-				require("snacks.rename").on_rename_file(data.source, data.destination)
-			end,
-		},
-	},
+	event_handlers = { events },
 
 	commands = {
-		scrollup = function(state)
-			smoothScroll("k", 30, 3)
-		end,
 
-		scrolldown = function(state)
-			smoothScroll("j", 30, 3)
-		end,
+		scrolldown = scrolldown,
+		scrollup = scrollup,
 
-		trash = function(state)
-			if witch("trash-put") then
-				local node = state.tree:get_node()
-				if node.type == "message" then
-					return
-				end
-				local _, name = require("neo-tree.utils").split_path(node.path)
-				local msg = string.format("you want to trash '%s' ???", name)
-				inputs.confirm(msg, function(confirmed)
-					if not confirmed then
-						return
-					end
-					vim.fn.system({ "trash-put", node.path })
-					require("neo-tree.sources.manager").refresh(state)
-				end)
-			else
-				vim.notify("`trash-cli`: no found", vim.log.levels.WARN, { icon = "🚮" })
-			end
-		end,
-
-		restore = function(state)
-			vim.cmd("BRestore")
-			require("neo-tree.sources.manager").refresh(state)
-		end,
+		trash = trash,
+		restore = restore,
 
 		abs_path = function(state)
 			local node = state.tree:get_node()

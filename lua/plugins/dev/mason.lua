@@ -14,7 +14,12 @@ require("mason").setup({
 			package_uninstalled = "  ",
 		},
 	},
+
+	registries = {
+		"github:maarutan/mason-registry",
+	},
 })
+
 ----------------------
 --- Tool Installer ---
 ----------------------
