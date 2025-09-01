@@ -16,7 +16,8 @@ require("mason").setup({
 	},
 
 	registries = {
-		"github:maarutan/mason-registry",
+		"file:~/.config/nvim/lua/plugins/dev/mason-registry/",
+		"github:mason-org/mason-registry",
 	},
 })
 
@@ -64,6 +65,7 @@ require("mason-tool-installer").setup({
 		"prettier", -- General-purpose (JS, CSS, HTML)
 		"prettierd", -- Lightweight Prettier
 		"stylua", -- Lua
+		"sass-formatter", -- Sass
 	},
 	auto_update = true, -- Automatically update tools
 	run_on_start = true, -- Install tools on startup

@@ -1,0 +1,18 @@
+---
+name: sass-formatter
+description: A formatter for Sass, SCSS, Less, and CSS files.
+homepage: https://github.com/TheRealSyler/sass-formatter
+licenses:
+  - MIT
+
+languages:
+  - SASS
+
+categories:
+  - Formatter
+
+source:
+  id: pkg:npm/sass-formatter@0.8.0
+
+bin:
+  sass-formatter: npm:sass-formatter
