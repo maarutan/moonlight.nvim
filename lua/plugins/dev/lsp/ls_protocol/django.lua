@@ -7,12 +7,7 @@ if not configs.django_template_language_server then
 		default_config = {
 			cmd = { "djlsp" },
 			filetypes = { "htmldjango" },
-			root_dir = require("lspconfig.util").root_pattern("manage.py", ".git"),
-			-- init_options = {
-			-- 	django_settings_module = "your_project.settings",
-			-- 	docker_compose_file = "docker-compose.yml",
-			-- 	docker_compose_service = "django",
-			-- },
+			root_dir = lspconfig.util.root_pattern("manage.py", ".git"),
 		},
 	}
 end

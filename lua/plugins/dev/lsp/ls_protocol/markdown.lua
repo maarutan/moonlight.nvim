@@ -1,9 +1,6 @@
-local lspconfig = require("lspconfig")
-local cmp_nvim_lsp = require("cmp_nvim_lsp")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local capabilities = cmp_nvim_lsp.default_capabilities()
-
-lspconfig.marksman.setup({
+vim.lsp.config("marksman", {
 	capabilities = capabilities,
 	settings = {
 		marksman = {
@@ -13,3 +10,5 @@ lspconfig.marksman.setup({
 		},
 	},
 })
+
+vim.lsp.enable("marksman")

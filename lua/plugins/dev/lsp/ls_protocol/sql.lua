@@ -1,8 +1,7 @@
-local lspconfig = require("lspconfig")
-local cmp_nvim_lsp = require("cmp_nvim_lsp")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local capabilities = cmp_nvim_lsp.default_capabilities()
-
-lspconfig.sqlls.setup({
+vim.lsp.config("sqlls", {
 	capabilities = capabilities,
 })
+
+vim.lsp.enable("sqlls")

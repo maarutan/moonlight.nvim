@@ -1,9 +1,6 @@
-local lspconfig = require("lspconfig")
-local cmp_nvim_lsp = require("cmp_nvim_lsp")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local capabilities = cmp_nvim_lsp.default_capabilities()
-
-lspconfig.jsonls.setup({
+vim.lsp.config("jsonls", {
 	capabilities = capabilities,
 	settings = {
 		json = {
@@ -33,3 +30,5 @@ lspconfig.jsonls.setup({
 		},
 	},
 })
+
+vim.lsp.enable("jsonls")

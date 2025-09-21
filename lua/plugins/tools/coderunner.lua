@@ -10,6 +10,7 @@ require("code-runner").setup({
 		sh = "sh $dir/$fileName",
 		zsh = "zsh $dir/$fileName",
 		html = "xdg-open $dir/$fileName",
+		c = "gcc $dir/$fileName -o $dir/$fileName && $dir/$fileName",
 	},
 	extensions = {
 		python = { "py" },

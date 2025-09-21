@@ -1,7 +1,7 @@
-local lspconfig = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-lspconfig.cssls.setup({
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+vim.lsp.config("cssls", {
+	capabilities = capabilities,
 	settings = {
 		css = {
 			validate = true,
@@ -27,5 +27,7 @@ lspconfig.cssls.setup({
 		"vue",
 		"svelte",
 	},
-	root_dir = lspconfig.util.root_pattern("package.json", "node_modules", ".git"),
+	root_dir = vim.fs.root(0, { "package.json", "node_modules", ".git" }),
 })
+
+vim.lsp.enable("cssls")

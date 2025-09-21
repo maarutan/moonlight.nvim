@@ -1,6 +1,4 @@
-local lspconfig = require("lspconfig")
-
-lspconfig.emmet_ls.setup({
+vim.lsp.config("emmet_ls", {
 	filetypes = {
 		"html",
 		"css",
@@ -11,7 +9,6 @@ lspconfig.emmet_ls.setup({
 		"blade.php",
 		"htmldjango",
 	},
-
 	init_options = {
 		emmet = {
 			showExpandedAbbreviation = "always",
@@ -20,3 +17,5 @@ lspconfig.emmet_ls.setup({
 		},
 	},
 })
+
+vim.lsp.enable("emmet_ls")

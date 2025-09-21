@@ -1,11 +1,10 @@
-local lspconfig = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-lspconfig.ts_ls.setup({
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+vim.lsp.config("ts_ls", {
+	capabilities = capabilities,
 	on_attach = function(client, bufnr)
 		client.server_capabilities.documentFormattingProvider = false
-
-		print("TypeScript LSP attached " .. bufnr)
+		print("TypeScript LSP attached → buffer " .. bufnr)
 	end,
 	settings = {
 		javascript = {
@@ -28,3 +27,5 @@ lspconfig.ts_ls.setup({
 		"typescript.tsx",
 	},
 })
+
+vim.lsp.enable("ts_ls")

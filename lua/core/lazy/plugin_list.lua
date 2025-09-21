@@ -100,4 +100,5 @@ return {
 	{ "maarutan/macro-notify.nvim", opts = {} },
 	{ "declancm/cinnamon.nvim", opts = {} },
 	{ "jake-stewart/multicursor.nvim" },
+	{ "tridactyl/vim-tridactyl" }, -- syntax highlighting for tridactyl,
 }

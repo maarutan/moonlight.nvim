@@ -1,7 +1,8 @@
-local lspconfig = require("lspconfig")
--- local capabilities = cmp_nvim_lsp.default_capabilities()
+-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-lspconfig.somesass_ls.setup({
+vim.lsp.config("somesass_ls", {
 	-- capabilities = capabilities,
 	filetypes = { "sass", "scss", "less" },
 })
+
+vim.lsp.enable("somesass_ls")

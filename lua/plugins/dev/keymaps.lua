@@ -4,19 +4,21 @@
 -- Copyright (c) 2025 maarutan. \ Marat Arzymatov  All Rights Reserved.
 -------------------------------------------------------------------------
 ---@diagnostic disable: undefined-global
-local lspconfig = require("lspconfig")
+
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local opts = { noremap = true, silent = true }
-local on_attach = function(client, bufnr)
+
+local on_attach = function(_, bufnr)
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
 	end
+
 	buf_set_keymap("n", "<leader>ld", "<cmd>Lspsaga goto_definition<CR>", opts)
 	buf_set_keymap("n", "<leader>lD", "<cmd>Lspsaga goto_type_definition<CR>", opts)
 	buf_set_keymap("n", "<leader>li", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 	buf_set_keymap("n", "<leader>lr", "<cmd>Lspsaga rename<CR>", opts)
 	buf_set_keymap("n", "<leader>lh", "<cmd>Lspsaga hover_doc<CR>", opts)
-	buf_set_keymap("n", "<leader>lr", "<cmd>Lspsaga rename<CR>", opts)
 	buf_set_keymap("n", "<leader>lo", "<cmd>Lspsaga outline<CR>", opts)
 	buf_set_keymap("n", "<leader>la", "<cmd>Lspsaga code_action<CR>", opts)
 	buf_set_keymap("n", "<leader>dw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", opts)
@@ -29,7 +31,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "<leader>ls", "<cmd>LspStart<CR>", opts)
 end
 
--- Setup language servers
+-- список серверов
 local servers = {
 	"ts_ls",
 	"django_template_language_server",
@@ -40,7 +42,7 @@ local servers = {
 	"lua_ls",
 	"jsonls",
 	"marksman",
-	"sqls",
+	"sqlls",
 	"taplo",
 	"yamlls",
 	"clangd",
@@ -48,8 +50,11 @@ local servers = {
 	"nil_ls",
 	"rust_analyzer",
 }
+
 for _, server in ipairs(servers) do
-	lspconfig[server].setup({
+	vim.lsp.config(server, {
 		on_attach = on_attach,
+		capabilities = capabilities,
 	})
+	vim.lsp.enable(server)
 end
