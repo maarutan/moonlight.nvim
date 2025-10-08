@@ -1,1 +1,0 @@
-require("live-server").setup()
