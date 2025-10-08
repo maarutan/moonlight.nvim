@@ -67,11 +67,7 @@ return {
 			if which:is_exists("hyprctl") then
 				table.insert(tools, "hyprls")
 			else
-				vim.notify(
-					icons.emoji.error .. " Hyprland is not installed",
-					vim.log.levels.WARN,
-					{ title = "Mason Installer" }
-				)
+				print(icons.emoji.error .. " hyprctl not found (Hyprland is not installed)")
 			end
 
 			if os.get_os_id() == "nix" then
@@ -92,13 +88,7 @@ return {
 			}
 
 			for _, d in ipairs(dependencies) do
-				if not which:is_exists(d) then
-					vim.notify(
-						icons.emoji.warn .. " Missing dependency: " .. d,
-						vim.log.levels.WARN,
-						{ title = "Dependency Check" }
-					)
-				end
+				if not which:is_exists(d) then vim.notify(icons.emoji.warn .. " Missing dependency: " .. d, vim.log.levels.WARN, { title = "Dependency Check" }) end
 			end
 
 			return {
