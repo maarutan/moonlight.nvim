@@ -1,0 +1,15 @@
+{
+    "diagnostics.disable": [
+        "inject-field",
+        "undefined-doc-name",
+        "different-requires",
+        "undefined-global",
+        "lowercase-global",
+        "undefined-field",
+        "need-check-nil"
+    ],
+    "diagnostics.globals": [
+        "vim",
+        "c"
+    ]
+}
