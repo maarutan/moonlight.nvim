@@ -48,6 +48,8 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
+	ui = { border = r("utils.ui").border },
+	git = { depth = 1 },
 	spec = { r("plugins") },
 	checker = { enabled = true },
 })

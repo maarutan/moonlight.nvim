@@ -88,7 +88,7 @@ return {
 			}
 
 			for _, d in ipairs(dependencies) do
-				if not which:is_exists(d) then vim.notify(icons.emoji.warn .. " Missing dependency: " .. d, vim.log.levels.WARN, { title = "Dependency Check" }) end
+				if not which:is_exists(d) then print(icons.emoji.error .. " " .. d .. " not found") end
 			end
 
 			return {
