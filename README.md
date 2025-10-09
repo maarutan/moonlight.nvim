@@ -18,7 +18,8 @@
 
 ## 🗂 Map list
 
-- [Description](#-description)
+- [Description 📝](#-description)
+- - [Requirements 📦](#-requirements)
 - [Screenshots 📷](#-screenshots)
   - [Dashboard](#-screenshots-dashboard)
   - [Python](#-screenshots-python)
@@ -38,6 +39,9 @@
 > ```
 >
 > Explore `lua/dev/mason` to manage your LSP, linters, and formatters declaratively.
+> Check [Requirements 📦](#-requirements)
+
+## 📦 Requirements
 
 ---
 
