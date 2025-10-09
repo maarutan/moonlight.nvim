@@ -4,6 +4,7 @@ local ui = r("utils.ui")
 local user = r("utils.whoami")
 local icons = r("utils.icons")
 local terminal = r("utils.terminal")
+local kitty = r("plugins.tools.kitty_term")
 
 return {
 	"folke/which-key.nvim",
@@ -364,21 +365,12 @@ return {
 		-- Add Kitty-specific mappings
 		if terminal.is_kitty() then
 			table.insert(mappings, { "<leader>k", group = "Kitty-config", icon = { icon = icons.kitty.group } })
-			table.insert(mappings, {
-				"<leader>kf",
-				function() r("plugins.tools.kitty_term").pick() end,
-				desc = "kitty Font Picker",
-			})
-			table.insert(mappings, {
-				"<leader>ks",
-				function() r("plugins.tools.kitty_term").size() end,
-				desc = "kitty Size Picker",
-			})
-			table.insert(mappings, {
-				"<leader>kr",
-				function() r("plugins.tools.kitty_term").reload() end,
-				desc = "kitty Reload Config",
-			})
+			table.insert(mappings, { "<leader>ku", function() kitty.plus() end, desc = "Kitty Font +1" })
+			table.insert(mappings, { "<leader>kd", function() kitty.minus() end, desc = "Kitty Font -1" })
+			table.insert(mappings, { "<leader>kf", function() kitty.pick() end, desc = "kitty Font Picker" })
+			table.insert(mappings, { "<leader>ks", function() kitty.size() end, desc = "kitty Size Picker" })
+			table.insert(mappings, { "<leader>kr", function() kitty.reload() end, desc = "kitty Reload Config" })
+			table.insert(mappings, { "<leader>ki", function() kitty.status() end, desc = "kitty Status" })
 		end
 
 		wk.add(mappings)

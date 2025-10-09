@@ -1,6 +1,6 @@
 {
-  "default_size": "15",
   "default_font": "FiraCode Nerd Font",
   "font": "CaskaydiaCove NF Light",
-  "size": "15"
+  "default_size": "15",
+  "size": 16
 }
