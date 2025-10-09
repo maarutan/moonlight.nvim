@@ -44,10 +44,14 @@
 ## 📦 Requirements
 
 > **Linux 🐧: **
-> `bash` `coreutils` `curl` `git` `gcc` `make` `zip` `unzip` `go` `lua` `luarocks` `python` `python-pip` `nodejs` `npm` `cargo` `ripgrep` `fd` `tree-sitter` `imagemagick` `trash-cli` `wl-clipboard`
+> `neovim` `bash` `coreutils` `curl` `git` `gcc` `make` `zip` `unzip` `go` `lua` `luarocks` `python` `python-pip` `nodejs` `npm` `cargo` `ripgrep` `fd` `tree-sitter` `imagemagick` `trash-cli`
+
+> ### Arch Linux ```bash
 >
-> ```bash
-> sudo pacman -Sy bash coreutils curl git gcc make zip unzip go lua luarocks python python-pip nodejs npm cargo ripgrep fd tree-sitter imagemagick trash-cli wl-clipboard
+> sudo pacman -Sy neovim bash coreutils curl git gcc make zip unzip go lua luarocks python python-pip nodejs npm cargo ripgrep fd tree-sitter imagemagick trash-cli
+>
+> ```
+>
 > ```
 
 ```
