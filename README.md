@@ -58,7 +58,7 @@ sudo pacman -Sy neovim bash coreutils curl git gcc make zip unzip go lua luarock
 #### Homebrew
 
 ```zsh
-brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks python python-pip nodejs npm cargo ripgrep fd tree-sitter imagemagick
+brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks python node rust ripgrep fd tree-sitter-cli imagemagick
 ```
 
 ---
