@@ -13,14 +13,33 @@
 --              ┌┬┐ ┌─┐ ┌─┐ ┌┐┌  ┬   ┬ ┌─┐ ┬ ┬ ┌┬┐                Z
 --              │││ │ │ │ │ │││  │   │ │ ┬ ├─┤  │              Z
 --              ┴ ┴ └─┘ └─┘ ┘└┘  ┴─┘ ┴ └─┘ ┴ ┴  ┴ .nvim   z
----------------------------------------------------------------------->
+--------------------------------------------------------------------->
 ```
 
-## 📂 Map list
+## 🗂 Map list
 
-- [Screenshots 🔫](#-screenshots)
-- - [Dashboard](#-screenshots-dashboard)
-- - [Python](#-screenshots-python)
+- [Description](#-description)
+- [Screenshots 📷](#-screenshots)
+  - [Dashboard](#-screenshots-dashboard)
+  - [Python](#-screenshots-python)
+
+## 📝 Description
+
+> **Moonlight.nvim** is a custom Neovim configuration focused on productivity and maximum comfort.
+> Written entirely in **Lua**, it follows a **declarative setup** using the [lazy.nvim](https://github.com/folke/lazy.nvim) plugin manager.
+>
+> Designed to feel like a full-featured **IDE**, Moonlight.nvim balances minimalism and power.
+> LSP and tooling (formatter, linter, etc.) are **disabled by default** and can be enabled declaratively.
+>
+> To initialize tools, simply run:
+>
+> ```vim
+> :MasonToolsUpdate
+> ```
+>
+> Explore `lua/dev/mason` to manage your LSP, linters, and formatters declaratively.
+
+---
 
 ## 📷 Screenshots
 
