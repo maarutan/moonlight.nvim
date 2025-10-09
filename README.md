@@ -18,9 +18,9 @@
 
 ## 📂 Map list
 
-- [Screenshots 🔫](#📷-screenshots)
-- - [Dashboard](#📷-screenshots-dashboard)
-- - [Python](#📷-screenshots-python)
+- [Screenshots 🔫](#-screenshots)
+- - [Dashboard](#-screenshots-dashboard)
+- - [Python](#-screenshots-python)
 
 ## 📷 Screenshots
 
