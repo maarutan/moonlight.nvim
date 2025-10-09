@@ -18,12 +18,12 @@
 
 ## 📂 Map list
 
-- [Screenshots 🔫](screenshots)
-- - [Dashboard](screenshots/dashboard)
-- - [Python](screenshots/python)
+- [Screenshots 🔫](#📷-screenshots)
+- - [Dashboard](#📷-screenshots-dashboard)
+- - [Python](#📷-screenshots-python)
 
 ## 📷 Screenshots
 
-| Dashboard                                                                                                             | Python                                                                                                                 |
-| --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| <img width="500" alt="image" src="https://github.com/user-attachments/assets/4888458f-91f0-47b5-9455-02627d9d9d4c" /> | <img width="500" alt="python" src="https://github.com/user-attachments/assets/e4eeee6f-c12f-46c4-bdbd-33baab7b7556" /> |
+| Dashboard                                                                                                                 | Python                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| <img width="500" alt="dashboard" src="https://github.com/user-attachments/assets/4888458f-91f0-47b5-9455-02627d9d9d4c" /> | <img width="500" alt="python" src="https://github.com/user-attachments/assets/e4eeee6f-c12f-46c4-bdbd-33baab7b7556" /> |
