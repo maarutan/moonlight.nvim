@@ -7,6 +7,9 @@ local prev = r(d .. "preview")
 local icons = r("utils.icons")
 
 local M = {}
+
+M.core = core
+
 local path_config = vim.fn.stdpath("config") .. "/" .. config.setup.config_path
 
 -- Start logic on load
@@ -62,5 +65,6 @@ function M.minus()
 end
 
 M.status = function() r(d .. "status").status() end
+M.lazy = r(d .. "kitty_scrollback")
 
 return M
