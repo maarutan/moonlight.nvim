@@ -43,7 +43,7 @@
 
 ## 📦 Requirements
 
-> **Linux 🐧: **:
+> **Linux 🐧: **
 > `bash` `coreutils` `curl` `git` `gcc` `make` `zip` `unzip` `go` `lua` `luarocks` `python` `python-pip` `nodejs` `npm` `cargo` `ripgrep` `fd` `tree-sitter` `imagemagick` `trash-cli` `wl-clipboard`
 
 ---
