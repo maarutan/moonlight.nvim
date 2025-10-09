@@ -45,6 +45,12 @@
 
 > **Linux 🐧: **
 > `bash` `coreutils` `curl` `git` `gcc` `make` `zip` `unzip` `go` `lua` `luarocks` `python` `python-pip` `nodejs` `npm` `cargo` `ripgrep` `fd` `tree-sitter` `imagemagick` `trash-cli` `wl-clipboard`
+>
+> ```bash
+> sudo pacman -Sy bash coreutils curl git gcc make zip unzip go lua luarocks python python-pip nodejs npm cargo ripgrep fd tree-sitter imagemagick trash-cli wl-clipboard
+> ```
+
+```
 
 ---
 
@@ -53,3 +59,4 @@
 | Dashboard                                                                                                                 | Python                                                                                                                 |
 | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | <img width="500" alt="dashboard" src="https://github.com/user-attachments/assets/4888458f-91f0-47b5-9455-02627d9d9d4c" /> | <img width="500" alt="python" src="https://github.com/user-attachments/assets/e4eeee6f-c12f-46c4-bdbd-33baab7b7556" /> |
+```
