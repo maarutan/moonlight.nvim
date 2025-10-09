@@ -3,10 +3,20 @@ local M = {}
 M.header = [[                                                     
 
 
+
+
+
 ┌┬┐┌─┐┌─┐┌┐┌┬  ┬┌─┐┬ ┬┌┬┐            Z
 ││││ ││ │││││  ││ ┬├─┤ │        z
 ┴ ┴└─┘└─┘┘└┘┴─┘┴└─┘┴ ┴ ┴   z
 ]]
+
+M.nvim = ""
+M.version = M.nvim
+
+M.language = {
+	lua = "",
+}
 
 M.complete = {
 	installed = "󰄲",

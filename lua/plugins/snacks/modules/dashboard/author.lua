@@ -1,17 +1,27 @@
 return function()
-    local r = require
-    local icons = r("utils.icons")
+	local r = require
+	local icons = r("utils.icons")
 
-    local github  = icons.clouds.github  .. "   https://github.com/maarutan/moonlight"
-    local author  = icons.copyright      .. "   maarutan"
+	local items = {
+		author = icons.copyright .. "   maarutan",
+		github = icons.clouds.github .. "   https://github.com/maarutan/moonlight",
+		line = "------------------------------------------",
+		lua = icons.language.lua .. "   " .. _VERSION,
+		version = icons.version .. "   " .. vim.api.nvim_command_output("version"):match("NVIM v[%d%.]+"),
+		terminal = icons.terminal .. "   " .. vim.env.TERM,
+	}
 
-    return {
-        text = "\n"
-            .. "\n" .. author
-            .. "\n" .. github,
+	local sort = { "author", "github", "line", "lua", "version", "terminal" }
+	local result = "\n\n\n"
+	for _, key in ipairs(sort) do
+		result = result .. items[key] .. "\n"
+	end
 
-        align = "end",
-        padding = 1,
-        pane = 2,
-    }
+	return {
+		text = result,
+		align = "end",
+		padding = 1,
+		pane = 2,
+		height = 10,
+	}
 end
