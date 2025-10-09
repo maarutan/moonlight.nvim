@@ -1,7 +1,7 @@
 ## M O O N L I G H T 🌙
 
 ```text
---                             M O O N L I G H T
+--                             M O O N L I G H T.nvim
 --       _..._         _..._         _..._         _..._         _..._
 --     .:::::::.     .::::. `.     .::::  `.     .::'   `.     .'     `.
 --    :::::::::::   :::::::.  :   ::::::    :   :::       :   :         :
@@ -19,6 +19,8 @@
 ## 📂 Map list
 
 - [Screenshots 🔫](screenshots)
+- - [Dashboard](screenshots/dashboard)
+- - [Python](screenshots/python)
 
 ## 📷 Screenshots
 
