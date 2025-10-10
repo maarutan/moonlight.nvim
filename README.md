@@ -11,7 +11,7 @@
 --
 --------------------------------------------------------------------->
 --              ┌┬┐ ┌─┐ ┌─┐ ┌┐┌  ┬   ┬ ┌─┐ ┬ ┬ ┌┬┐                Z
---              │││ │ │ │ │ │││  │   │ │ ┬ ├─┤  │              Z
+--              │││ │ │ │ │ │││  │   │ │ ┌ ┬─┼  │              Z
 --              ┴ ┴ └─┘ └─┘ ┘└┘  ┴─┘ ┴ └─┘ ┴ ┴  ┴ .nvim   z
 --------------------------------------------------------------------->
 ```
@@ -19,10 +19,13 @@
 ## 🗂 Map list
 
 - [Description 📝](#-description)
-- - [Requirements 📦](#-requirements)
+  - [Requirements 📦](#-requirements)
+
 - [Screenshots 📷](#-screenshots)
   - [Dashboard](#-screenshots-dashboard)
   - [Python](#-screenshots-python)
+
+- [if you use `Kitty`]()
 
 ## 📝 Description
 
@@ -43,7 +46,7 @@
 
 ## 📦 Requirements
 
-> **Linux 🐧: **
+> **Linux 🐧:**
 > `neovim` `bash` `coreutils` `curl` `git` `gcc` `make` `zip` `unzip` `go` `lua` `luarocks` `python` `python-pip` `nodejs` `npm` `cargo` `ripgrep` `fd` `tree-sitter` `imagemagick` `trash-cli`
 
 #### Arch Linux
@@ -52,7 +55,7 @@
 sudo pacman -Sy neovim bash coreutils curl git gcc make zip unzip go lua luarocks python python-pip nodejs npm cargo ripgrep fd tree-sitter imagemagick trash-cli
 ```
 
-> **MacOS 🍎: **
+> **MacOS 🍎:**
 > `neovim` `bash` `coreutils` `curl` `git` `gcc` `make` `zip` `unzip` `go` `lua` `luarocks` `python` `python-pip` `nodejs` `npm` `cargo` `ripgrep` `fd` `tree-sitter` `imagemagick`
 
 #### Homebrew
@@ -60,6 +63,14 @@ sudo pacman -Sy neovim bash coreutils curl git gcc make zip unzip go lua luarock
 ```zsh
 brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks python node rust ripgrep fd tree-sitter-cli imagemagick
 ```
+
+---
+
+## Kitty Terminal 😽
+
+> The **Moonlight.nvim** setup is designed for the **Kitty terminal**. It supports inline image previews and advanced copy functionality through `kitty-scrollback.nvim`, as well as dynamic font and layout synchronization via `kitty-lock.json`.
+>
+> **Kitty is strongly recommended** for the full Moonlight.nvim experience.
 
 ---
 
