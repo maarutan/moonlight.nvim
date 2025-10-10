@@ -25,7 +25,7 @@
   - [Dashboard](#-screenshots-dashboard)
   - [Python](#-screenshots-python)
 
-- [if you use `Kitty`](#_kitty-terminal)
+- [if you use `Kitty`](#-kitty-terminal)
 
 ## 📝 Description
 
