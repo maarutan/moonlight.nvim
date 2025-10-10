@@ -102,7 +102,9 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 
 ---
 
-#### ** All Keymaps **: [`lua/plugins/which_key.lua`](./lua/plugins/which_key.lua)
+#### ** All Keymaps **:
+
+> - [`lua/plugins/which_key.lua`](./lua/plugins/which_key.lua)
 
 ---
 
