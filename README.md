@@ -101,13 +101,6 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 > git clone --depth 1 https://github.com/maarutan/moonlight.nvim.git $config_dir
 > nvim
 > ```
->
-> ✅ Notes:
->
-> - `$env:USERPROFILE` is the correct variable for the current user path.
-> - PowerShell uses `Test-Path` for existence checks.
-> - No need for `bash -c` — PowerShell runs Git and Neovim directly.
-> - You can also run this from **Git Bash**, but then the Unix version is preferable.
 
 ---
 
