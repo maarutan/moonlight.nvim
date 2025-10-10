@@ -105,6 +105,17 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 ### ⌨️ All Keymaps
 
 > - [`lua/plugins/which_key.lua`](./lua/plugins/which_key.lua)
+> - This is a dedicated plugin that provides **preview and organization of all plugin-specific keymaps**.
+> - It allows you to quickly visualize and explore available keybindings through a dynamic pop-up menu.
+> - **Used exclusively for plugin-defined keymaps** to keep configuration modular and decluttered.
+>
+> ---
+>
+> - [`lua/core/keymaps.lua`](./lua/core/keymaps.lua)
+> - Contains all **default, core, and fallback keybindings** for Neovim.
+> - These mappings work even if [lazy.nvim](https://github.com/folke/lazy.nvim) is not loaded or plugins are disabled.
+>
+> Together, these two layers form a clean separation between **core navigation** and **plugin integrations**, ensuring that your environment remains responsive and predictable even during partial plugin loading.
 
 ---
 
