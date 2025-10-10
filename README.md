@@ -12,7 +12,7 @@
 --------------------------------------------------------------------->
 --              ┌┬┐ ┌─┐ ┌─┐ ┌┐┌  ┬   ┬ ┌─┐ ┬ ┬ ┌┬┐                Z
 --              │││ │ │ │ │ │││  │   │ │ ┌ ┬─┼  │              Z
---              ┴ ┴ └─┳ └─┳ ┘└┘  ┴─┳ ┴ └─┳ ┴ ┬  ┴ .nvim   z
+--              ┴ ┴ └─┬ └─┬ ┘└┘  ┴─┬ ┴ └─┬ ┴ ┬  ┴ .nvim   z
 --------------------------------------------------------------------->
 ```
 
@@ -87,6 +87,15 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 >
 > - `config_path` — path to `kitty-lock.json` starting from your `nvim/` directory.
 > - `kitty_path` — path to your Kitty configuration file containing font settings.
+>
+> ### ⌨ Keymaps
+>
+> - `<leader>ku` — Kitty Font +1
+> - `<leader>kd` — Kitty Font -1
+> - `<leader>kf` — Kitty Font Picker
+> - `<leader>ks` — Kitty Size Picker
+> - `<leader>kr` — Kitty Reload Config
+> - `<leader>ki` — Kitty Status Config
 
 ---
 
