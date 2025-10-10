@@ -20,6 +20,7 @@
 
 - [Description 📝](#-description)
   - [Requirements 📦](#-requirements)
+  - [Installation 📥](#-installation)
 
 - [Screenshots 📷](#-screenshots)
   - [Dashboard](#-screenshots-dashboard)
@@ -66,6 +67,34 @@ sudo pacman -Sy neovim bash coreutils curl git gcc make zip unzip go lua luarock
 ```zsh
 brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks python node rust ripgrep fd tree-sitter-cli imagemagick
 ```
+
+---
+
+## 📥 Installation
+
+> **Before installation:** make sure to back up your existing Neovim configuration. If Moonlight.nvim fails to start, you can easily restore it. If any issues occur, please open a GitHub issue so it can be fixed quickly.
+>
+> ```bash
+> config_dir=~/.config/nvim
+> if [[ -d  $config_dir ]]; then
+>     echo "Backup already exists, skipping backup"
+> else
+>     echo "Backing up existing config to $config_dir"
+>     mv ~/.config/nvim ~/.config/nvim.bak
+> fi
+> mkdir -p '$config_dir'
+> clone="git clone --depth 1 https://github.com/maarutan/moonlight.nvim.git '$config_dir'"
+> bash -c "$clone"
+> nvim
+> ```
+
+---
+
+## 📷 Screenshots
+
+| Dashboard                                                                                                                 | Python                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| <img width="500" alt="dashboard" src="https://github.com/user-attachments/assets/4888458f-91f0-47b5-9455-02627d9d9d4c" /> | <img width="500" alt="python" src="https://github.com/user-attachments/assets/e4eeee6f-c12f-46c4-bdbd-33baab7b7556" /> |
 
 ---
 
@@ -118,9 +147,3 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 > Together, these two layers form a clean separation between **core navigation** and **plugin integrations**, ensuring that your environment remains responsive and predictable even during partial plugin loading.
 
 ---
-
-## 📷 Screenshots
-
-| Dashboard                                                                                                                 | Python                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| <img width="500" alt="dashboard" src="https://github.com/user-attachments/assets/4888458f-91f0-47b5-9455-02627d9d9d4c" /> | <img width="500" alt="python" src="https://github.com/user-attachments/assets/e4eeee6f-c12f-46c4-bdbd-33baab7b7556" /> |
