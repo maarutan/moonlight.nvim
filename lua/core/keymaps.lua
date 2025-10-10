@@ -19,6 +19,10 @@ map({ "n", "x" }, "<C-d>", function() helper.scroll:start(false) end, { silent =
 -- Clear search
 map({ "n", "v" }, "<Esc>", "<Esc><cmd>nohlsearch<CR>", { silent = true, desc = "Clear search highlight" })
 
+-- Save File
+map({ "i", "n", "v" }, "<C-s>", "<cmd>w<CR>", { silent = true, desc = "Save File" })
+map({ "i", "n", "v" }, "<C-CR>", "<cmd>w<CR>", { silent = true, desc = "Save File" })
+
 -- Increment/decrement
 map({ "n", "x" }, "=", "<C-a>", { noremap = true })
 map({ "n", "x" }, "-", "<C-x>", { noremap = true })
