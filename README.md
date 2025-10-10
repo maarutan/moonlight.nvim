@@ -26,7 +26,7 @@
   - [Dashboard](#-screenshots-dashboard)
   - [Python](#-screenshots-python)
 
-- [If you use `Kitty`](#-kitty-terminal)
+- [If you use `Kitty` 😽](#-kitty-terminal)
   - [`Kitty` Keymaps 😽](#-keymaps)
 
 - [All Keymaps ⌨️](#%EF%B8%8F-all-keymaps)
