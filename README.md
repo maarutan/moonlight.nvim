@@ -66,7 +66,7 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 
 ---
 
-##😽 Kitty Terminal
+## 😽 Kitty Terminal
 
 > The **Moonlight.nvim** setup is designed for the **Kitty terminal**. It supports inline image previews and advanced copy functionality through `kitty-scrollback.nvim`, as well as dynamic font and layout synchronization via `kitty-lock.json`.
 >
