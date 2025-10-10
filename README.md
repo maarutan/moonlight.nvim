@@ -74,7 +74,7 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 
 > **Before installation:** make sure to back up your existing Neovim configuration. If Moonlight.nvim fails to start, you can easily restore it. If any issues occur, please open a GitHub issue so it can be fixed quickly.
 >
-> #### Unix 💿 (Linux, macOS)
+> #### Unix 📏 (Linux, macOS)
 >
 > ```zsh
 > config_dir=~/.config/nvim
@@ -89,12 +89,6 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 > ```
 >
 > #### Windows 🪐
->
-> Your Windows example is **almost correct**, but needs a few key adjustments for PowerShell syntax.
->
-> In PowerShell, use `$env:USERPROFILE` instead of `%USERPROFILE%`, and replace Linux-style `[[ -d ... ]]` checks with `Test-Path`. Also, prefer `Move-Item` instead of `mv`.
->
-> Here’s the corrected version:
 >
 > ```powershell
 > $config_dir = "$env:USERPROFILE\AppData\Local\nvim"
@@ -114,6 +108,8 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 > - PowerShell uses `Test-Path` for existence checks.
 > - No need for `bash -c` — PowerShell runs Git and Neovim directly.
 > - You can also run this from **Git Bash**, but then the Unix version is preferable.
+
+---
 
 ## 📷 Screenshots
 
@@ -145,7 +141,7 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 > - `config_path` — path to `kitty-lock.json` starting from your `nvim/` directory.
 > - `kitty_path` — path to your Kitty configuration file containing font settings.
 >
-> ### ⌨️ Keymaps
+> ### ⌨ Keymaps
 >
 > - `<leader>ku` — Kitty Font +1
 > - `<leader>kd` — Kitty Font -1
