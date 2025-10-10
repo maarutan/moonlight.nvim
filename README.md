@@ -74,7 +74,9 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 
 > **Before installation:** make sure to back up your existing Neovim configuration. If Moonlight.nvim fails to start, you can easily restore it. If any issues occur, please open a GitHub issue so it can be fixed quickly.
 >
-> ```bash
+> #### Unix 💿 (Linux, macOS)
+>
+> ```zsh
 > config_dir=~/.config/nvim
 > if [[ -d  $config_dir ]]; then
 >     echo "Backing up existing config to $config_dir"
@@ -85,8 +87,33 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 > bash -c "$clone"
 > nvim
 > ```
-
----
+>
+> #### Windows 🪐
+>
+> Your Windows example is **almost correct**, but needs a few key adjustments for PowerShell syntax.
+>
+> In PowerShell, use `$env:USERPROFILE` instead of `%USERPROFILE%`, and replace Linux-style `[[ -d ... ]]` checks with `Test-Path`. Also, prefer `Move-Item` instead of `mv`.
+>
+> Here’s the corrected version:
+>
+> ```powershell
+> $config_dir = "$env:USERPROFILE\AppData\Local\nvim"
+>
+> if (Test-Path $config_dir) {
+>     Write-Host "Backing up existing config to $config_dir.bak"
+>     Move-Item -Path $config_dir -Destination "$config_dir.bak" -Force
+> }
+>
+> git clone --depth 1 https://github.com/maarutan/moonlight.nvim.git $config_dir
+> nvim
+> ```
+>
+> ✅ Notes:
+>
+> - `$env:USERPROFILE` is the correct variable for the current user path.
+> - PowerShell uses `Test-Path` for existence checks.
+> - No need for `bash -c` — PowerShell runs Git and Neovim directly.
+> - You can also run this from **Git Bash**, but then the Unix version is preferable.
 
 ## 📷 Screenshots
 
