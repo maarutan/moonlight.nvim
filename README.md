@@ -30,6 +30,7 @@
   - [`Kitty` Keymaps 😽](#-keymaps)
 
 - [All Keymaps ⌨️](#%EF%B8%8F-all-keymaps)
+- [License 🔑](#-license)
 
 ## 📝 Description
 
@@ -161,3 +162,12 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 > Together, these two layers form a clean separation between **core navigation** and **plugin integrations**, ensuring that your environment remains responsive and predictable even during partial plugin loading.
 
 ---
+
+## 📝 License
+
+See the [`License 🔑`](./license)
+
+---
+
+> Built with ❤️ by [maarutan](https://github.com/maarutan) <br/>
+> I wish you maximum productivity. ⚡⚡⚡
