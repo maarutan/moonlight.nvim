@@ -28,7 +28,7 @@
 - [If you use `Kitty`](#-kitty-terminal)
   - [`Kitty` Keymaps](#-keymaps)
 
-- [All Keymaps](#-all-keymaps)
+- [All Keymaps](#%EF%B8%8F-all-keymaps)
 
 ## 📝 Description
 
