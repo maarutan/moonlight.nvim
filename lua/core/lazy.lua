@@ -1,6 +1,9 @@
-local which = require("utils.which")
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 local r = require
+local icons = require("utils.icons")
+local which = r("utils.which")
+local ui = r("utils.ui")
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 local no_git_banner = [[
 ╔═╗┬─┐┬─┐┌─┐┬─┐
@@ -25,9 +28,11 @@ if not which:is_exists("git") then
 end
 
 ---@diagnostic disable-next-line: undefined-field
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
+local uv = vim.uv or vim.loop
+if not uv.fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-	local out = vim.fn.system({
+	vim.notify("Cloning lazy.nvim ...", vim.log.levels.INFO)
+	local ok, out = pcall(vim.fn.system, {
 		"git",
 		"clone",
 		"--filter=blob:none",
@@ -35,10 +40,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 		lazyrepo,
 		lazypath,
 	})
-	if vim.v.shell_error ~= 0 then
+	if not ok or vim.v.shell_error ~= 0 then
 		vim.api.nvim_echo({
-			{ "Error cloning lazy.nvim:\n", "ErrorMsg" },
-			{ out, "WarningMsg" },
+			{ icons.emoji.error .. " Error cloning lazy.nvim:\n", "ErrorMsg" },
+			{ out or "unknown error", "WarningMsg" },
 			{ "\n ~> Press Enter to continue...", "Normal" },
 		}, true, {})
 		vim.fn.getchar()
@@ -47,12 +52,17 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
----@diagnostic disable-next-line: redefined-local
-local r = require
 
-r("lazy").setup({
-	ui = { border = r("utils.ui").border },
-	git = { depth = 1 },
+local ok, lazy = which:is_module_has("lazy")
+if not ok then
+	vim.notify("Failed to load lazy.nvim", vim.log.levels.ERROR)
+	return
+end
+
+local ok_setup, err = pcall(lazy.setup, {
 	spec = { r("plugins") },
+	ui = { border = ui.border },
+	git = { depth = 1 },
 	checker = { enabled = true },
 })
+if not ok_setup then vim.notify("Lazy setup failed: " .. err, vim.log.levels.ERROR) end
