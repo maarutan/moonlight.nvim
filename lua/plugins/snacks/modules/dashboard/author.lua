@@ -4,8 +4,8 @@ return function()
 
 	local items = {
 		author = icons.copyright .. "   maarutan",
-		github = icons.clouds.github .. "   https://github.com/maarutan/moonlight",
-		line = "------------------------------------------",
+		github = icons.clouds.github .. "   https://github.com/maarutan/moonlight.nvim",
+		line = "-----------------------------------------------",
 		lua = icons.languages.lua .. "   " .. _VERSION,
 		version = icons.version .. "   " .. vim.api.nvim_command_output("version"):match("NVIM v[%d%.]+"),
 		terminal = icons.terminal .. "   " .. vim.env.TERM,
