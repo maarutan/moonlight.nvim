@@ -13,10 +13,14 @@ map("i", "jk", "<Esc>", { silent = true, desc = "Exit Insert mode" })
 map({ "i", "n" }, "<C-a>", function() helper.select_all() end, { silent = true, desc = "Select All" })
 
 -- Scroll
-map({"n", "x"}, "<C-u>", function() helper.scroll:start(true) end, { silent = false, desc = "Scroll up" })
-map({"n", "x"}, "<C-d>", function() helper.scroll:start(false) end, { silent = false, desc = "Scroll down" })
+map({ "n", "x" }, "<C-u>", function() helper.scroll:start(true) end, { silent = false, desc = "Scroll up" })
+map({ "n", "x" }, "<C-d>", function() helper.scroll:start(false) end, { silent = false, desc = "Scroll down" })
 
 -- Clear search
-map({'n','v'}, '<Esc>', '<Esc><cmd>nohlsearch<CR>', { silent = true, desc = "Clear search highlight" })
+map({ "n", "v" }, "<Esc>", "<Esc><cmd>nohlsearch<CR>", { silent = true, desc = "Clear search highlight" })
+
+-- Increment/decrement
+map({ "n", "x" }, "=", "<C-a>", { noremap = true })
+map({ "n", "x" }, "-", "<C-x>", { noremap = true })
 
 -- [ ------------------------------------------------------]
