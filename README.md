@@ -91,7 +91,7 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 > - `config_path` — path to `kitty-lock.json` starting from your `nvim/` directory.
 > - `kitty_path` — path to your Kitty configuration file containing font settings.
 >
-> ### ⌨ Keymaps
+> ### ⌨️ Keymaps
 >
 > - `<leader>ku` — Kitty Font +1
 > - `<leader>kd` — Kitty Font -1
@@ -102,7 +102,7 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 
 ---
 
-#### ** All Keymaps **:
+#### ⌨️ All Keymaps
 
 > - [`lua/plugins/which_key.lua`](./lua/plugins/which_key.lua)
 
