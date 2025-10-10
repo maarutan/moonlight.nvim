@@ -26,6 +26,7 @@
   - [Python](#-screenshots-python)
 
 - [if you use `Kitty`](#-kitty-terminal)
+  - [`Kitty` Keymaps](#-keymaps)
 
 ## 📝 Description
 
