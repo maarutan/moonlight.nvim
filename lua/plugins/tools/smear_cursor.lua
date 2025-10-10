@@ -1,12 +1,18 @@
-return {
-	"sphamba/smear-cursor.nvim",
-	event = "VeryLazy",
-	enabled = true,
-	opts = {
-		smear_between_buffers = true,
-		smear_between_neighbor_lines = true,
-		scroll_buffer_space = true,
-		legacy_computing_symbols_support = false,
-		smear_insert_mode = true,
-	},
-}
+local r = require
+local utils = r("utils")
+local terminal = r("utils.terminal")
+
+return function()
+	return {
+		"sphamba/smear-cursor.nvim",
+		event = "VeryLazy",
+		enabled = terminal:is_kitty(),
+		opts = {
+			smear_between_buffers = true,
+			smear_between_neighbor_lines = true,
+			scroll_buffer_space = true,
+			legacy_computing_symbols_support = false,
+			smear_insert_mode = true,
+		},
+	}
+end

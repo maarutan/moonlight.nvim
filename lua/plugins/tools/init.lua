@@ -12,6 +12,7 @@ local plugins = {
 	r(d .. "ccc"),
 	r(d .. "trouble"),
 	r(d .. "waka_time"),
+	r(d .. "lazy_reload"),
 }
 
 if terminal.is_kitty() then table.insert(plugins, kitty.lazy) end

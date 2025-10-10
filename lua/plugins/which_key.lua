@@ -362,6 +362,12 @@ return {
 			{ "<leader>lS", "<cmd>LspStop<CR>", desc = "Stop LSP", mode = { "n" } },
 			{ "<leader>ls", "<cmd>LspStart<CR>", desc = "Start LSP", mode = { "n" } },
 			{ "<leader>lt", function() toggle_word.toggle_word() end, desc = "Toggle Word LSP", mode = { "n" } },
+
+			-- Lazy Reload
+
+			{ "<leader>L", group = "Lazy", icon = { icon = icons.lazy }, mode = { "n" } },
+			{ "<leader>Lr", function() vim.api.nvim_feedkeys(":ReloadPlugin ", "n", false) end, icon = { icon = icons.lazy }, desc = "Lazy Reload", mode = { "n" } },
+			{ "<leader>Ls", "<cmd>Lazy sync<cr>", icon = { icon = icons.lazy }, desc = "Lazy Sync", mode = { "n" } },
 		}
 
 		-- Add Kitty-specific mappings

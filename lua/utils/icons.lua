@@ -11,6 +11,7 @@ M.header = [[
 ┴ ┴└─┘└─┘┘└┘┴─┘┴└─┘┴ ┴ ┴ .nvim  z
 ]]
 
+M.lazy = "󰒲"
 M.nvim = ""
 M.version = M.nvim
 
