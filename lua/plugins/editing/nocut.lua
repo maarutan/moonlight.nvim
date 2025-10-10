@@ -18,12 +18,12 @@ return {
 		paste_without_copy = true,
 	},
 	config = function(_, opts)
-        local r = require
+		local r = require
+		local map = vim.keymap.set
 		r("no-cut").setup(opts)
 
-		vim.keymap.set({"n", "v"}, "x", "d", { noremap = true, silent = true })
-		vim.keymap.set({"n", "v"}, "xx", "dd", { noremap = true, silent = true })
-		vim.keymap.set({"n", "v"}, "X", "D", { noremap = true, silent = true })
-
+		map({ "n", "v" }, "x", "d", { noremap = true, silent = true })
+		map({ "n", "v" }, "xx", "dd", { noremap = true, silent = true })
+		map({ "n", "v" }, "X", "D", { noremap = true, silent = true })
 	end,
 }

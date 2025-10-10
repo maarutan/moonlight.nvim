@@ -47,7 +47,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup({
+---@diagnostic disable-next-line: redefined-local
+local r = require
+
+r("lazy").setup({
 	ui = { border = r("utils.ui").border },
 	git = { depth = 1 },
 	spec = { r("plugins") },

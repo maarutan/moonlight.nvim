@@ -1,8 +1,6 @@
 return {
-    "node_modules",
-    ".venv",
-    ".venv",
-    "venv",
-    ".pyrightconfig.json",
-    "node_modules",
+	"node_modules",
+	".venv",
+	"venv",
+	".pyrightconfig.json",
 }

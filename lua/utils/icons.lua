@@ -14,7 +14,7 @@ M.header = [[
 M.nvim = ""
 M.version = M.nvim
 
-M.language = {
+M.languages = {
 	lua = "",
 }
 
