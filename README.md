@@ -25,8 +25,10 @@
   - [Dashboard](#-screenshots-dashboard)
   - [Python](#-screenshots-python)
 
-- [if you use `Kitty`](#-kitty-terminal)
+- [If you use `Kitty`](#-kitty-terminal)
   - [`Kitty` Keymaps](#-keymaps)
+
+- [All Keymaps](#-all-keymaps--luapluginswhich_keylua)
 
 ## 📝 Description
 
@@ -97,6 +99,8 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 > - `<leader>ks` — Kitty Size Picker
 > - `<leader>kr` — Kitty Reload Config
 > - `<leader>ki` — Kitty Status Config
+
+---
 
 #### ** All Keymaps **: [`lua/plugins/which_key.lua`](./lua/plugins/which_key.lua)
 
