@@ -41,7 +41,7 @@ return {
 			},
 			{
 				icon = icons.word,
-				key = "g",
+				key = "w",
 				desc = " _  󱦰 Find Word",
 				action = function()
 					Snacks.picker.grep()
