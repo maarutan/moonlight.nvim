@@ -12,7 +12,7 @@
 --------------------------------------------------------------------->
 --              ┌┬┐ ┌─┐ ┌─┐ ┌┐┌  ┬   ┬ ┌─┐ ┬ ┬ ┌┬┐                Z
 --              │││ │ │ │ │ │││  │   │ │ ┌ ┬─┼  │              Z
---              ┴ ┴ └─┘ └─┘ ┘└┘  ┴─┘ ┴ └─┘ ┴ ┴  ┴ .nvim   z
+--              ┴ ┴ └─┳ └─┳ ┘└┘  ┴─┳ ┴ └─┳ ┴ ┬  ┴ .nvim   z
 --------------------------------------------------------------------->
 ```
 
@@ -71,6 +71,22 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 > The **Moonlight.nvim** setup is designed for the **Kitty terminal**. It supports inline image previews and advanced copy functionality through `kitty-scrollback.nvim`, as well as dynamic font and layout synchronization via `kitty-lock.json`.
 >
 > **Kitty is strongly recommended** for the full Moonlight.nvim experience.
+>
+> If you want to configure `kitty_tern` for font control, navigate to:
+>
+> `lua/plugins/tools/kitty_term/config`
+>
+> There you'll see:
+>
+> ```lua
+> M.setup = {
+>   config_path = "kitty-lock.json",
+>   kitty_path  = "~/.config/kitty/font.cfg",
+> }
+> ```
+>
+> - `config_path` — path to `kitty-lock.json` starting from your `nvim/` directory.
+> - `kitty_path` — path to your Kitty configuration file containing font settings.
 
 ---
 
