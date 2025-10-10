@@ -67,6 +67,7 @@ M.emoji = {
 	rocket = "🚀",
 	lightning = "⚡️",
 	dream = "💤",
+	success = "✅",
 }
 
 M.exit = "󰩈"

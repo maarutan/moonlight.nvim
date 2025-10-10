@@ -5,6 +5,7 @@ local user = r("utils.whoami")
 local icons = r("utils.icons")
 local terminal = r("utils.terminal")
 local kitty = r("plugins.tools.kitty_term")
+local toggle_word = r("plugins.tools.toggle_word")
 
 return {
 	"folke/which-key.nvim",
@@ -360,6 +361,7 @@ return {
 			{ "<leader>lI", "<cmd>LspInfo<CR>", desc = "LSP Info", mode = { "n" } },
 			{ "<leader>lS", "<cmd>LspStop<CR>", desc = "Stop LSP", mode = { "n" } },
 			{ "<leader>ls", "<cmd>LspStart<CR>", desc = "Start LSP", mode = { "n" } },
+			{ "<leader>lt", function() toggle_word.toggle_word() end, desc = "Toggle Word LSP", mode = { "n" } },
 		}
 
 		-- Add Kitty-specific mappings
