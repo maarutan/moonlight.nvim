@@ -8,7 +8,9 @@ return {
 			local ui = r("utils.ui")
 			local size = 20
 
-			if ui.termianl_direction == "vertical" then size = 50 end
+			if ui.termianl_direction == "vertical" then
+				size = 50
+			end
 
 			require("toggleterm").setup({
 				direction = ui.termianl_direction,
@@ -50,7 +52,8 @@ return {
 					sh = "sh $dir/$fileName",
 					zsh = "zsh $dir/$fileName",
 					html = "xdg-open $dir/$fileName",
-					c = "gcc $dir/$fileName -o $dir/$fileName && $dir/$fileName",
+					c = "gcc $dir/$fileName -o $dir/output && $dir/output && rm $dir/output",
+					cpp = "g++ $dir/$fileName -o $dir/output && $dir/output && rm $dir/output",
 				},
 
 				extensions = {
@@ -60,6 +63,7 @@ return {
 					zsh = { "zsh" },
 					html = { "html" },
 					c = { "c" },
+					cpp = { "cpp", "c++" },
 				},
 
 				debug = false,
