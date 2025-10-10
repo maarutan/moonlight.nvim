@@ -77,8 +77,6 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 > ```bash
 > config_dir=~/.config/nvim
 > if [[ -d  $config_dir ]]; then
->     echo "Backup already exists, skipping backup"
-> else
 >     echo "Backing up existing config to $config_dir"
 >     mv ~/.config/nvim ~/.config/nvim.bak
 > fi
