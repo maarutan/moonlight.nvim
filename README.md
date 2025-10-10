@@ -28,7 +28,7 @@
 - [If you use `Kitty`](#-kitty-terminal)
   - [`Kitty` Keymaps](#-keymaps)
 
-- [All Keymaps](#-all-keymaps--luapluginswhich_keylua)
+- [All Keymaps](#-all-keymaps)
 
 ## 📝 Description
 
@@ -102,7 +102,7 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 
 ---
 
-#### ⌨️ All Keymaps
+### ⌨️ All Keymaps
 
 > - [`lua/plugins/which_key.lua`](./lua/plugins/which_key.lua)
 
