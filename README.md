@@ -98,6 +98,8 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 > - `<leader>kr` — Kitty Reload Config
 > - `<leader>ki` — Kitty Status Config
 
+#### ** All Keymaps **: [`lua/plugins/which_key.lua`](./lua/plugins/which_key.lua)
+
 ---
 
 ## 📷 Screenshots
