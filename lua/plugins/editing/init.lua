@@ -13,6 +13,7 @@ return {
 	r(d .. "comments"),
 	r(d .. "gomove"),
 	r(d .. "multicursor"),
+	r(d .. "macros"),
 
 	-- { r(d .. "") },
 }
