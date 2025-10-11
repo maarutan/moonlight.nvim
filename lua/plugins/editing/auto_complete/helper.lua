@@ -4,7 +4,7 @@ local r = require
 
 local SmoothTurn = r("utils.smooth_turn")
 local which = r("utils.which")
-if not which:is_module_has("cmp") then return end
+if not which:is_module_exists("cmp") then return end
 
 local cmp = r("cmp")
 

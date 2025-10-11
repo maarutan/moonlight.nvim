@@ -1,7 +1,7 @@
 local r = require
 
 local which = r("utils.which")
-if not which:is_module_has("cmp") then return end
+if not which:is_module_exists("cmp") then return end
 
 local cmp = r("cmp")
 return cmp.config.sources({

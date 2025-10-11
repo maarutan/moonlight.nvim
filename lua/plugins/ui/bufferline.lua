@@ -3,7 +3,7 @@ local icons = r("utils.icons")
 local which = r("utils.which")
 local terminal = r("utils.terminal")
 
-local close_cmd = which:is_module_has("bufdelete") and "Bdelete! %d" or "bdelete! %d"
+local close_cmd = which:is_module_exists("bufdelete") and "Bdelete! %d" or "bdelete! %d"
 return {
 	"akinsho/bufferline.nvim",
 	version = "*",
@@ -67,25 +67,23 @@ return {
 			},
 			---- custom modules
 			custom_areas = {
-                right = function()
-                  local fg = vim.g.is_day_mode and "#ffffff" or "#000000"
+				right = function()
+					local fg = vim.g.is_day_mode and "#ffffff" or "#000000"
 
-                  local right_items = {}
+					local right_items = {}
 
-                  if terminal.is_kitty() then
-                    table.insert(right_items, {
-                      text = "  [ " .. icons.kitty.title .. "  kitty ] ",
-                    })
-                  end
+					if terminal.is_kitty() then table.insert(right_items, {
+						text = "  [ " .. icons.kitty.title .. "  kitty ] ",
+					}) end
 
-                  table.insert(right_items, {
-                    text = " " .. icons.close .. " ",
-                    fg = fg,
-                    bg = "#C75B5F",
-                  })
+					table.insert(right_items, {
+						text = " " .. icons.close .. " ",
+						fg = fg,
+						bg = "#C75B5F",
+					})
 
-                  return right_items
-                end,
+					return right_items
+				end,
 			},
 		},
 	},

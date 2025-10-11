@@ -3,7 +3,8 @@ local nt = r("neo-tree")
 local manager = r("neo-tree.sources.manager")
 local commands = r("neo-tree.sources.common.commands")
 local Trash_cli = r("utils.trash_cli")
-local inputs = require("neo-tree.ui.inputs")
+local inputs = r("neo-tree.ui.inputs")
+local which = r("utils.which")
 
 local trash = Trash_cli:new()
 
@@ -58,21 +59,32 @@ return {
 		local node = state.tree:get_node()
 		if not node then return end
 
-		local msg = string.format("Move '%s' to trash?", node.name)
-		inputs.confirm(msg, function(confirmed)
-			if not confirmed then return end
-			trash:put(node.path)
-			manager.refresh(state)
-		end)
+		if which:ensure_method(trash, "put") then
+			local msg = string.format("Move '%s' to trash?", node.name)
+			inputs.confirm(msg, function(confirmed)
+				if not confirmed then return end
+			end)
+		else
+			-- Fallback if method not implemented or missing
+			commands.delete(state)
+		end
+		manager.refresh(state)
 	end,
 
 	restore_from_trash = function(state)
-		local last_item = trash:last_restorable_name() or "unknown"
-		local msg = string.format("Restore '%s' from trash?", last_item)
-		inputs.confirm(msg, function(confirmed)
-			if not confirmed then return end
-			trash:restore()
+		local last_item = "unknown"
+
+		if which:ensure_method(trash, "last_restorable_name") then last_item = trash:last_restorable_name() end
+
+		if which:ensure_method(trash, "restore") then
+			local msg = string.format("Restore '%s' from trash?", last_item)
+			inputs.confirm(msg, function(confirmed)
+				if not confirmed then return end
+				trash:restore()
+				manager.refresh(state)
+			end)
+		else
 			manager.refresh(state)
-		end)
+		end
 	end,
 }

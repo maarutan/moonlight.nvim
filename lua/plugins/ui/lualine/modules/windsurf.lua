@@ -5,7 +5,7 @@ return {
 		local which = r("utils.which")
 		local icons = r("utils.icons")
 
-		local ok, vt = which:is_module_has("codeium.virtual_text")
+		local ok, vt = which:is_module_exists("codeium.virtual_text")
 		if not ok then vt = { status = function() return { state = "not_found" } end } end
 
 		color = function()

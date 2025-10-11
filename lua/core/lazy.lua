@@ -53,7 +53,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-local ok, lazy = which:is_module_has("lazy")
+local ok, lazy = which:is_module_exists("lazy")
 if not ok then
 	vim.notify("Failed to load lazy.nvim", vim.log.levels.ERROR)
 	return

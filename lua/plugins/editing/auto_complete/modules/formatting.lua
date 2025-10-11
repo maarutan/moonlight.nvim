@@ -2,7 +2,7 @@ local r = require
 local which = r("utils.which")
 local icons = r("utils.icons")
 
-local ok_lspkind = which:is_module_has("lspkind")
+local ok_lspkind = which:is_module_exists("lspkind")
 local lspkind = ok_lspkind and r("lspkind") or nil
 
 if not ok_lspkind then vim.notify("lspkind not found — used default icons", vim.log.levels.ERROR) end
@@ -34,7 +34,7 @@ return {
 		if menu_label ~= "" then menu_label = menu_label:sub(1, 1):upper() .. menu_label:sub(2) end
 		lspkind_fmt.menu = "   [ " .. menu_label .. " ]"
 
-		local ok_colors, colors = which:is_module_has("nvim-highlight-colors")
+		local ok_colors, colors = which:is_module_exists("nvim-highlight-colors")
 		if ok_colors then
 			local color_item = colors.format(entry, { kind = vim_item.kind })
 			if color_item and color_item.abbr_hl_group then

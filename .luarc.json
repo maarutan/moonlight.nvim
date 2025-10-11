@@ -6,7 +6,9 @@
         "undefined-global",
         "lowercase-global",
         "undefined-field",
-        "need-check-nil"
+        "need-check-nil",
+        "unused-local",
+        "deprecated"
     ],
     "diagnostics.globals": [
         "vim",

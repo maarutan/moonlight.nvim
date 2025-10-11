@@ -1,7 +1,7 @@
 local r = require
 
 local which = r("utils.which")
-if not which:is_module_has("luasnip") then return end
+if not which:is_module_exists("luasnip") then return end
 
 local luasnip = r("luasnip")
 local uv = vim.loop
@@ -34,8 +34,7 @@ luasnip.add_snippets("json", {
 			end
 
 			local is_windows = uv.os_uname().version:match("Windows")
-			local python_path = is_windows and ('"./' .. venv .. '/Scripts/python.exe"')
-				or ('"./' .. venv .. '/bin/python"')
+			local python_path = is_windows and ('"./' .. venv .. '/Scripts/python.exe"') or ('"./' .. venv .. '/bin/python"')
 
 			return {
 				"{",

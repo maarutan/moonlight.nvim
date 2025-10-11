@@ -5,7 +5,8 @@ return {
 		keys = "qwertyuiopasdfghjklzxcvbnm",
 	},
 	config = function(_, opts)
-		local hop = require("hop")
+		local r = require
+		local hop = r("hop")
 		hop.setup(opts)
 	end,
 }
