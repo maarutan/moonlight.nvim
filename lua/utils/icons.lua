@@ -143,6 +143,8 @@ M.noice = {
 	not_found = M.diagnostic.warn,
 }
 
+M.dashboard = "󰨇"
+
 M.directory = {
 	open = "",
 	close = "",

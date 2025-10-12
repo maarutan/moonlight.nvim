@@ -60,9 +60,7 @@ return {
 		local grp = vim.api.nvim_create_augroup("NoiceBackdrop", { clear = true })
 
 		local function open_backdrop()
-			if vim.g._noice_backdrop_win and vim.api.nvim_win_is_valid(vim.g._noice_backdrop_win) then
-				return
-			end
+			if vim.g._noice_backdrop_win and vim.api.nvim_win_is_valid(vim.g._noice_backdrop_win) then return end
 			local buf = vim.api.nvim_create_buf(false, true)
 			local win = vim.api.nvim_open_win(buf, false, {
 				relative = "editor",
@@ -75,19 +73,15 @@ return {
 				zindex = 50,
 				noautocmd = true,
 			})
-			if vim.fn.hlexists("NoiceBackdrop") == 0 then
-				vim.api.nvim_set_hl(0, "NoiceBackdrop", { bg = "#000000" })
-			end
+			if vim.fn.hlexists("NoiceBackdrop") == 0 then vim.api.nvim_set_hl(0, "NoiceBackdrop", { bg = "#000000" }) end
 			vim.api.nvim_win_set_option(win, "winhighlight", "Normal:NoiceBackdrop")
-			pcall(vim.api.nvim_win_set_option, win, "winblend", 65)
+			pcall(vim.api.nvim_win_set_option, win, "winblend", 70)
 			vim.g._noice_backdrop_win = win
 		end
 
 		local function close_backdrop()
 			local win = vim.g._noice_backdrop_win
-			if win and vim.api.nvim_win_is_valid(win) then
-				pcall(vim.api.nvim_win_close, win, true)
-			end
+			if win and vim.api.nvim_win_is_valid(win) then pcall(vim.api.nvim_win_close, win, true) end
 			vim.g._noice_backdrop_win = nil
 		end
 
@@ -96,9 +90,7 @@ return {
 		vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
 			group = grp,
 			callback = function()
-				if vim.fn.mode():find("c") then
-					return
-				end
+				if vim.fn.mode():find("c") then return end
 				close_backdrop()
 			end,
 		})

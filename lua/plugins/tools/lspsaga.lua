@@ -202,5 +202,6 @@ return {
 		})
 
 		vim.api.nvim_set_option("winhighlight", "WinBar:Normal,WinBarNC:NormalNC")
+
 	end,
 }

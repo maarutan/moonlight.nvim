@@ -373,6 +373,9 @@ return {
 			-- code Runner
 
 			{ "<A-r>", "<cmd>ToggleTermCodeRunner<cr>", desc = "Run code", mode = { "n", "x", "i" } },
+
+			-- dashboard
+			{ "<leader>D", function() Snacks.dashboard.open() end, desc = "Dashboard", icon = { icon = icons.dashboard } },
 		}
 
 		-- Add Kitty-specific mappings
