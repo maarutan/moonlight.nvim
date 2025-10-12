@@ -64,6 +64,7 @@ M.emoji = {
 	resize = "♻️",
 	warn = "⚠️",
 	put_trash = "🚮",
+	trash = "🗑️",
 	restore = "♻️",
 	rocket = "🚀",
 	lightning = "⚡️",

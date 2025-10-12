@@ -26,6 +26,8 @@ return {
 				},
 			},
 
+			commands = r(m .. "commands"),
+
 			window = {
 				position = "left",
 				width = 30,
@@ -36,7 +38,6 @@ return {
 				mappings = r(m .. "mappings"),
 			},
 
-			commands = r(m .. "commands"),
 			event_handlers = r(m .. "events"),
 
 			default_component_configs = {

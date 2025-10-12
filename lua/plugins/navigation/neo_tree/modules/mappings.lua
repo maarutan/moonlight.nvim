@@ -10,6 +10,7 @@ return {
 	["n"] = "toggle_hide_root_node",
 
 	-- copy
+	["yy"] = "copy_to_clipboard",
 	["yf"] = "copy_file_name",
 	["yp"] = "copy_file_path",
 	["yd"] = "copy_dir_path",
