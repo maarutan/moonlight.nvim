@@ -2,7 +2,7 @@ return {
 	"ecthelionvi/NeoComposer.nvim",
 	dependencies = { "kkharji/sqlite.lua" },
 	opts = {
-		notify = true,
+		notify = false,
 		delay_timer = 150,
 		queue_most_recent = false,
 		window = {
@@ -25,8 +25,8 @@ return {
 			yank_macro = "yq",
 			stop_macro = "cq",
 			toggle_record = "q",
-			cycle_next = "<c-n>",
-			cycle_prev = "<c-p>",
+			-- cycle_next = "<C-A-n>",
+			-- cycle_prev = "<C-A-p>",
 			toggle_macro_menu = "<m-q>",
 		},
 	},

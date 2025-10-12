@@ -8,7 +8,8 @@
         "undefined-field",
         "need-check-nil",
         "unused-local",
-        "deprecated"
+        "deprecated",
+        "redundant-return-value"
     ],
     "diagnostics.globals": [
         "vim",
