@@ -9,7 +9,8 @@
         "need-check-nil",
         "unused-local",
         "deprecated",
-        "redundant-return-value"
+        "redundant-return-value",
+        "cast-local-type"
     ],
     "diagnostics.globals": [
         "vim",

@@ -1,18 +1,11 @@
 local border = "rounded"
--- lazy.nvim
+
 return {
 	"folke/noice.nvim",
 	enabled = true,
 	event = "VeryLazy",
-	version = "*", -- use latest release
-	dependencies = {
-		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-		"MunifTanjim/nui.nvim",
-		-- OPTIONAL:
-		--   `nvim-notify` is only needed, if you want to use the notification view.
-		--   If not available, we use `mini` as the fallback
-		-- "rcarriga/nvim-notify",
-	},
+	version = "*",
+	dependencies = { "MunifTanjim/nui.nvim" },
 	opts = {
 		lsp = {
 			signature = { opts = { size = { max_height = 10, max_width = 60 }, border = border } },
@@ -23,37 +16,18 @@ return {
 				["cmp.entry.get_documentation"] = true,
 			},
 		},
-
 		cmdline = {
 			enabled = true,
 			format = {
-				-- conceal: (default=true) This will hide the text in the cmdline that matches the pattern.
-				-- view: (default is cmdline view)
-				-- opts: any options passed to the view
-				-- icon_hl_group: optional hl_group for the icon
-				-- title: set to anything or empty string to hide
 				cmdline = { pattern = "^:", icon = "", lang = "vim" },
 				search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
 				search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
 				filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
 				lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
 				help = { pattern = "^:%s*he?l?p?%s+", icon = "?" },
-				input = { view = "cmdline_input", icon = "" }, -- Used by input()
-				-- lua = false, -- to disable a format, set to `false`
+				input = { view = "cmdline_input", icon = "" },
 			},
 		},
-		--- lazy ---
-		-- presets = {
-		-- 	bottom_search = true, -- use a classic bottom cmdline for search
-		-- 	command_palette = true, -- position the cmdline and popupmenu together
-		-- 	long_message_to_split = true, -- long messages will be sent to a split
-		-- 	inc_rename = false, -- enables an input dialog for inc-rename.nvim
-		-- 	lsp_doc_border = false, -- add a border to hover docs and signature help
-		-- },
-		--- lazy ---
-
-		progress = {},
-
 		routes = {
 			{
 				filter = {
@@ -67,37 +41,66 @@ return {
 				view = "mini",
 			},
 		},
-
 		views = {
-			cmdline_input = {
-				border = {
-					style = border,
-				},
-			},
+			cmdline_input = { border = { style = border } },
 			cmdline_popup = {
-				border = {
-					style = border,
-					-- padding = { 1, 1 },
-				},
-				position = {
-					row = "37%",
-					col = "50%",
-				},
-				size = {
-					width = 60,
-					height = "auto",
-				},
+				border = { style = border },
+				position = { row = "37%", col = "50%" },
+				size = { width = 60, height = "auto" },
 			},
 			mini = {
-				position = {
-					row = "97%",
-					col = "100%",
-				},
-				size = {
-					width = "auto",
-					height = "auto",
-				},
+				position = { row = "97%", col = "100%" },
+				size = { width = "auto", height = "auto" },
 			},
 		},
 	},
+	config = function(_, opts)
+		require("noice").setup(opts)
+
+		local grp = vim.api.nvim_create_augroup("NoiceBackdrop", { clear = true })
+
+		local function open_backdrop()
+			if vim.g._noice_backdrop_win and vim.api.nvim_win_is_valid(vim.g._noice_backdrop_win) then
+				return
+			end
+			local buf = vim.api.nvim_create_buf(false, true)
+			local win = vim.api.nvim_open_win(buf, false, {
+				relative = "editor",
+				width = vim.o.columns,
+				height = vim.o.lines,
+				row = 0,
+				col = 0,
+				style = "minimal",
+				focusable = false,
+				zindex = 50,
+				noautocmd = true,
+			})
+			if vim.fn.hlexists("NoiceBackdrop") == 0 then
+				vim.api.nvim_set_hl(0, "NoiceBackdrop", { bg = "#000000" })
+			end
+			vim.api.nvim_win_set_option(win, "winhighlight", "Normal:NoiceBackdrop")
+			pcall(vim.api.nvim_win_set_option, win, "winblend", 65)
+			vim.g._noice_backdrop_win = win
+		end
+
+		local function close_backdrop()
+			local win = vim.g._noice_backdrop_win
+			if win and vim.api.nvim_win_is_valid(win) then
+				pcall(vim.api.nvim_win_close, win, true)
+			end
+			vim.g._noice_backdrop_win = nil
+		end
+
+		vim.api.nvim_create_autocmd("CmdlineEnter", { group = grp, callback = open_backdrop })
+		vim.api.nvim_create_autocmd("CmdlineLeave", { group = grp, callback = close_backdrop })
+		vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
+			group = grp,
+			callback = function()
+				if vim.fn.mode():find("c") then
+					return
+				end
+				close_backdrop()
+			end,
+		})
+	end,
 }

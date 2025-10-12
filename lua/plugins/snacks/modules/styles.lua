@@ -38,18 +38,18 @@ return {
 		-- width/height are automatically set by the image size unless specified below
 	},
 	input = {
-		backdrop = false,
+		backdrop = true,
 		position = "float",
 		border = ui.border,
 		title_pos = "center",
 		height = 1,
-		width = 60,
+		width = 50,
 		relative = "editor",
 		noautocmd = true,
 		row = 2,
 		-- relative = "cursor",
-		-- row = -3,
-		-- col = 0,
+		row = 0.2,
+		-- col = 2,
 		wo = {
 			winhighlight = "NormalFloat:SnacksInputNormal,FloatBorder:SnacksInputBorder,FloatTitle:SnacksInputTitle",
 			cursorline = false,
