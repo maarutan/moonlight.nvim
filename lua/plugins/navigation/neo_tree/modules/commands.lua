@@ -14,7 +14,7 @@ local trash = Trash_cli:new()
 return {
 	none = function() return nil end,
 
-	which_key = function()
+	neo_tree_keys = function()
 		if not which:is_module_exists("which-key") then return end
 
 		if not which_key_is_show then

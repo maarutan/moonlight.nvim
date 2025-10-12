@@ -4,7 +4,7 @@ return {
 	["H"] = "navigate_up",
 
 	["<leader><leader>"] = {
-		"which_key",
+		"neo_tree_keys",
 		nowait = false,
 	},
 
