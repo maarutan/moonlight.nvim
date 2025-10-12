@@ -3,6 +3,11 @@ return {
 	["L"] = "set_root",
 	["H"] = "navigate_up",
 
+	["<leader><leader>"] = {
+		"which_key",
+		nowait = false,
+	},
+
 	["r"] = "rename",
 	["<C-h>"] = "toggle_hidden",
 
@@ -28,4 +33,5 @@ return {
 	-- none
 	["y"] = "none",
 	["t"] = "none",
+	["<space>"] = "none",
 }

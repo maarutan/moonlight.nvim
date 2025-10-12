@@ -3,7 +3,9 @@ local d = "plugins.tools."
 local terminal = r("utils.terminal")
 local kitty = r(d .. "kitty_term")
 
-if terminal.is_kitty() then kitty.core.autostart() end
+if terminal.is_kitty() then
+	kitty.core.autostart()
+end
 
 local plugins = {
 	r(d .. "ts-autotag"),
@@ -15,7 +17,11 @@ local plugins = {
 	r(d .. "lazy_reload"),
 }
 
-if terminal.is_kitty() then table.insert(plugins, kitty.lazy) end
-if not terminal.is_kitty() then table.insert(plugins, r(d .. "smear_cursor")) end
+if terminal.is_kitty() then
+	table.insert(plugins, kitty.lazy)
+end
+if not terminal.is_kitty() then
+	table.insert(plugins, r(d .. "smear_cursor"))
+end
 
 return plugins

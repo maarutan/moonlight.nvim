@@ -13,7 +13,9 @@ return {
 			end
 
 			require("toggleterm").setup({
-				direction = ui.termianl_direction,
+				direction = "horizontal",
+				start_in_insert = true,
+				persist_mode = false,
 				size = size,
 				float_opts = {
 					border = ui.border,
@@ -35,17 +37,14 @@ return {
 
 	-- 🚀 code-runner
 	{
-		"maarutan/coderunner.nvim",
+		"maarutan/toggleterm-coderunner.nvim",
+
 		dependencies = { "akinsho/toggleterm.nvim" },
 		config = function()
 			local r = require
 			local ui = r("utils.ui")
 
-			require("code-runner").setup({
-				keymap = "<A-r>",
-				interrupt_keymap = "<F2>",
-				terminal_mode = ui.termianl_direction,
-
+			r("toggleterm-coderunner").setup({
 				commands = {
 					python = "python3 -u $dir/$fileName",
 					lua = "lua $dir/$fileName",
@@ -65,8 +64,6 @@ return {
 					c = { "c" },
 					cpp = { "cpp", "c++" },
 				},
-
-				debug = false,
 			})
 		end,
 	},

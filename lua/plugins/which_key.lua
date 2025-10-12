@@ -6,6 +6,7 @@ local icons = r("utils.icons")
 local terminal = r("utils.terminal")
 local kitty = r("plugins.tools.kitty_term")
 local toggle_word = r("plugins.tools.toggle_word")
+local navigation = "plugins.navigation"
 
 return {
 	"folke/which-key.nvim",
@@ -368,6 +369,10 @@ return {
 			{ "<leader>L", group = "Lazy", icon = { icon = icons.lazy }, mode = { "n" } },
 			{ "<leader>Lr", function() vim.api.nvim_feedkeys(":ReloadPlugin ", "n", false) end, icon = { icon = icons.lazy }, desc = "Lazy Reload", mode = { "n" } },
 			{ "<leader>Ls", "<cmd>Lazy sync<cr>", icon = { icon = icons.lazy }, desc = "Lazy Sync", mode = { "n" } },
+
+			-- code Runner
+
+			{ "<A-r>", "<cmd>ToggleTermCodeRunner<cr>", desc = "Run code", mode = { "n", "x", "i" } },
 		}
 
 		-- Add Kitty-specific mappings

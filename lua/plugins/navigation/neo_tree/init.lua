@@ -5,6 +5,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
 		"nvim-tree/nvim-web-devicons",
+		"famiu/bufdelete.nvim",
 	},
 	lazy = false,
 	config = function()
@@ -36,6 +37,10 @@ return {
 					nowait = true,
 				},
 				mappings = r(m .. "mappings"),
+			},
+
+			source_selector = {
+				winbar = false, -- toggle to show selector on winbar
 			},
 
 			event_handlers = r(m .. "events"),

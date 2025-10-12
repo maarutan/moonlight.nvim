@@ -1,18 +1,31 @@
 local r = require
-local icons = require("utils.icons")
+local icons = r("utils.icons")
 local nt = r("neo-tree")
 local manager = r("neo-tree.sources.manager")
 local commands = r("neo-tree.sources.common.commands")
 local Trash_cli = r("utils.trash_cli")
 local inputs = r("neo-tree.ui.inputs")
 local which = r("utils.which")
+local renderer = r("neo-tree.ui.renderer")
+local which_key_is_show = false
 
 local trash = Trash_cli:new()
 
-local renderer = require("neo-tree.ui.renderer")
-local common = require("neo-tree.sources.common.commands")
 return {
 	none = function() return nil end,
+
+	which_key = function()
+		if not which:is_module_exists("which-key") then return end
+
+		if not which_key_is_show then
+			vim.cmd("WhichKey")
+			which_key_is_show = true
+		else
+			-- simulate <Esc> safely (works in non-modifiable buffers)
+			vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
+			which_key_is_show = false
+		end
+	end,
 
 	visual_line = function(state) vim.cmd("normal! V") end,
 

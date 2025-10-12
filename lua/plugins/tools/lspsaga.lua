@@ -138,6 +138,7 @@ return {
 				folder_level = 1,
 				color_mode = true,
 				delay = 300,
+				disable = { "neo-tree", "TelescopePrompt", "snacks_picker", "prompt" },
 			},
 			outline = {
 				win_position = "right",
