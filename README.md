@@ -109,7 +109,7 @@ brew install neovim bash coreutils curl git gcc make zip unzip go lua luarocks p
 
 | Dashboard                                                                                                             | Python                                                                                                                 |
 | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| <img width="700" alt="image" src="https://github.com/user-attachments/assets/4974a132-dc70-4ca0-9311-0e668ba28cd5" /> | <img width="700" alt="python" src="https://github.com/user-attachments/assets/e4eeee6f-c12f-46c4-bdbd-33baab7b7556" /> |
+| <img width="700" alt="image" src="https://github.com/user-attachments/assets/d3b0afc7-94cb-43d4-8c2b-ed6592836e5d" /> | <img width="700" alt="python" src="https://github.com/user-attachments/assets/e4eeee6f-c12f-46c4-bdbd-33baab7b7556" /> |
 
 ---
 
