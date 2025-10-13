@@ -3,7 +3,7 @@ local r = require
 local trash_cli = r("utils.trash_cli")
 local ui = r("utils.ui")
 local user = r("utils.whoami")
--- local icons = r("utils.icons")
+local icons = r("utils.icons")
 local terminal = r("utils.terminal")
 local kitty = r("plugins.tools.kitty_term")
 local toggle_word = r("plugins.tools.toggle_word")
@@ -32,89 +32,67 @@ return {
 			{ "<leader>f", group = "Find", icon = { icon = icons.find } },
 			{
 				"<leader>ff",
-				function()
-					Snacks.picker.files()
-				end,
+				function() Snacks.picker.files() end,
 				icon = { icon = icons.find },
 				desc = "Find File",
 			},
 			{
 				"<leader>fw",
-				function()
-					Snacks.picker.grep_word()
-				end,
+				function() Snacks.picker.grep_word() end,
 				icon = { icon = icons.find },
 				desc = "Find Word Under Cursor",
 			},
 			{
 				"<leader>fu",
-				function()
-					Snacks.picker.undo()
-				end,
+				function() Snacks.picker.undo() end,
 				icon = { icon = icons.find },
 				desc = "Find Undo",
 			},
 			{
 				"<leader>fW",
-				function()
-					Snacks.picker.grep()
-				end,
+				function() Snacks.picker.grep() end,
 				icon = { icon = icons.find },
 				desc = "Find Word",
 			},
 			{
 				"<leader>fb",
-				function()
-					Snacks.picker.buffers()
-				end,
+				function() Snacks.picker.buffers() end,
 				icon = { icon = icons.find },
 				desc = "Find Buffer",
 			},
 			{
 				"<leader>fh",
-				function()
-					Snacks.picker.help()
-				end,
+				function() Snacks.picker.help() end,
 				icon = { icon = icons.find },
 				desc = "Find Help",
 			},
 			{
 				"<leader>fH",
-				function()
-					Snacks.picker.health()
-				end,
+				function() Snacks.picker.health() end,
 				icon = { icon = icons.find },
 				desc = "Find Health",
 			},
 			{
 				"<leader>fr",
-				function()
-					Snacks.picker.recent()
-				end,
+				function() Snacks.picker.recent() end,
 				icon = { icon = icons.find },
 				desc = "Find Recent",
 			},
 			{
 				"<leader>fR",
-				function()
-					Snacks.picker.recent({ filter = { cwd = true }, confirm = { "edit", "tcd" } })
-				end,
+				function() Snacks.picker.recent({ filter = { cwd = true }, confirm = { "edit", "tcd" } }) end,
 				icon = { icon = icons.find },
 				desc = "Recent in CWD & cd",
 			},
 			{
 				"<leader>fm",
-				function()
-					Snacks.picker.keymaps()
-				end,
+				function() Snacks.picker.keymaps() end,
 				icon = { icon = icons.find },
 				desc = "Find Mappings",
 			},
 			{
 				"<leader>fc",
-				function()
-					Snacks.picker.colorschemes()
-				end,
+				function() Snacks.picker.colorschemes() end,
 				desc = "Find Colorscheme",
 				icon = { icon = icons.color },
 			},
@@ -123,27 +101,17 @@ return {
 			{ "<leader>n", group = "Notifications", icon = { icon = icons.notification } },
 			{
 				"<leader>nu",
-				function()
-					Snacks.notifier.hide()
-				end,
+				function() Snacks.notifier.hide() end,
 				desc = "Hide Notifications",
 			},
 			{
 				"<leader>nh",
-				function()
-					Snacks.notifier.show_history()
-				end,
+				function() Snacks.notifier.show_history() end,
 				desc = "Show Notification History",
 			},
 			{
 				"<leader>nt",
-				function()
-					vim.notify(
-						"This is a test " .. user .. " !!!",
-						vim.log.levels.WARN,
-						{ title = "Demo", icon = "⚠️" }
-					)
-				end,
+				function() vim.notify("This is a test " .. user .. " !!!", vim.log.levels.WARN, { title = "Demo", icon = "⚠️" }) end,
 				desc = "Test Notification",
 			},
 
@@ -410,9 +378,7 @@ return {
 			{ "<leader>ls", "<cmd>LspStart<CR>", desc = "Start LSP", mode = { "n" } },
 			{
 				"<leader>lt",
-				function()
-					toggle_word.toggle_word()
-				end,
+				function() toggle_word.toggle_word() end,
 				desc = "Toggle Word LSP",
 				mode = { "n" },
 			},
@@ -422,9 +388,7 @@ return {
 			{ "<leader>L", group = "Lazy", icon = { icon = icons.lazy }, mode = { "n" } },
 			{
 				"<leader>Lr",
-				function()
-					vim.api.nvim_feedkeys(":ReloadPlugin ", "n", false)
-				end,
+				function() vim.api.nvim_feedkeys(":ReloadPlugin ", "n", false) end,
 				icon = { icon = icons.lazy },
 				desc = "Lazy Reload",
 				mode = { "n" },
@@ -438,9 +402,7 @@ return {
 			-- dashboard
 			{
 				"<leader>D",
-				function()
-					Snacks.dashboard.open()
-				end,
+				function() Snacks.dashboard.open() end,
 				desc = "Dashboard",
 				icon = { icon = icons.dashboard },
 			},
@@ -451,44 +413,32 @@ return {
 			table.insert(mappings, { "<leader>k", group = "Kitty-config", icon = { icon = icons.kitty.group } })
 			table.insert(mappings, {
 				"<leader>ku",
-				function()
-					kitty.plus()
-				end,
+				function() kitty.plus() end,
 				desc = "Kitty Font +1",
 			})
 			table.insert(mappings, {
 				"<leader>kd",
-				function()
-					kitty.minus()
-				end,
+				function() kitty.minus() end,
 				desc = "Kitty Font -1",
 			})
 			table.insert(mappings, {
 				"<leader>kf",
-				function()
-					kitty.pick()
-				end,
+				function() kitty.pick() end,
 				desc = "kitty Font Picker",
 			})
 			table.insert(mappings, {
 				"<leader>ks",
-				function()
-					kitty.size()
-				end,
+				function() kitty.size() end,
 				desc = "kitty Size Picker",
 			})
 			table.insert(mappings, {
 				"<leader>kr",
-				function()
-					kitty.reload()
-				end,
+				function() kitty.reload() end,
 				desc = "kitty Reload Config",
 			})
 			table.insert(mappings, {
 				"<leader>ki",
-				function()
-					kitty.status()
-				end,
+				function() kitty.status() end,
 				desc = "kitty Status",
 			})
 		end
