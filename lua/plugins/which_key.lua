@@ -1,8 +1,9 @@
 ---@diagnostic disable: undefined-global
 local r = require
+local trash_cli = r("utils.trash_cli")
 local ui = r("utils.ui")
 local user = r("utils.whoami")
-local icons = r("utils.icons")
+-- local icons = r("utils.icons")
 local terminal = r("utils.terminal")
 local kitty = r("plugins.tools.kitty_term")
 local toggle_word = r("plugins.tools.toggle_word")
@@ -11,7 +12,7 @@ local navigation = "plugins.navigation"
 return {
 	"folke/which-key.nvim",
 	enabled = true,
-	event = "VeryLazy",
+	lazy = false,
 	dependencies = "echasnovski/mini.icons",
 	opts = {
 		preset = "modern",
@@ -31,67 +32,89 @@ return {
 			{ "<leader>f", group = "Find", icon = { icon = icons.find } },
 			{
 				"<leader>ff",
-				function() Snacks.picker.files() end,
+				function()
+					Snacks.picker.files()
+				end,
 				icon = { icon = icons.find },
 				desc = "Find File",
 			},
 			{
 				"<leader>fw",
-				function() Snacks.picker.grep_word() end,
+				function()
+					Snacks.picker.grep_word()
+				end,
 				icon = { icon = icons.find },
 				desc = "Find Word Under Cursor",
 			},
 			{
 				"<leader>fu",
-				function() Snacks.picker.undo() end,
+				function()
+					Snacks.picker.undo()
+				end,
 				icon = { icon = icons.find },
 				desc = "Find Undo",
 			},
 			{
 				"<leader>fW",
-				function() Snacks.picker.grep() end,
+				function()
+					Snacks.picker.grep()
+				end,
 				icon = { icon = icons.find },
 				desc = "Find Word",
 			},
 			{
 				"<leader>fb",
-				function() Snacks.picker.buffers() end,
+				function()
+					Snacks.picker.buffers()
+				end,
 				icon = { icon = icons.find },
 				desc = "Find Buffer",
 			},
 			{
 				"<leader>fh",
-				function() Snacks.picker.help() end,
+				function()
+					Snacks.picker.help()
+				end,
 				icon = { icon = icons.find },
 				desc = "Find Help",
 			},
 			{
 				"<leader>fH",
-				function() Snacks.picker.health() end,
+				function()
+					Snacks.picker.health()
+				end,
 				icon = { icon = icons.find },
 				desc = "Find Health",
 			},
 			{
 				"<leader>fr",
-				function() Snacks.picker.recent() end,
+				function()
+					Snacks.picker.recent()
+				end,
 				icon = { icon = icons.find },
 				desc = "Find Recent",
 			},
 			{
 				"<leader>fR",
-				function() Snacks.picker.recent({ filter = { cwd = true }, confirm = { "edit", "tcd" } }) end,
+				function()
+					Snacks.picker.recent({ filter = { cwd = true }, confirm = { "edit", "tcd" } })
+				end,
 				icon = { icon = icons.find },
 				desc = "Recent in CWD & cd",
 			},
 			{
 				"<leader>fm",
-				function() Snacks.picker.keymaps() end,
+				function()
+					Snacks.picker.keymaps()
+				end,
 				icon = { icon = icons.find },
 				desc = "Find Mappings",
 			},
 			{
 				"<leader>fc",
-				function() Snacks.picker.colorschemes() end,
+				function()
+					Snacks.picker.colorschemes()
+				end,
 				desc = "Find Colorscheme",
 				icon = { icon = icons.color },
 			},
@@ -100,17 +123,27 @@ return {
 			{ "<leader>n", group = "Notifications", icon = { icon = icons.notification } },
 			{
 				"<leader>nu",
-				function() Snacks.notifier.hide() end,
+				function()
+					Snacks.notifier.hide()
+				end,
 				desc = "Hide Notifications",
 			},
 			{
 				"<leader>nh",
-				function() Snacks.notifier.show_history() end,
+				function()
+					Snacks.notifier.show_history()
+				end,
 				desc = "Show Notification History",
 			},
 			{
 				"<leader>nt",
-				function() vim.notify("This is a test " .. user .. " !!!", vim.log.levels.WARN, { title = "Demo", icon = "⚠️" }) end,
+				function()
+					vim.notify(
+						"This is a test " .. user .. " !!!",
+						vim.log.levels.WARN,
+						{ title = "Demo", icon = "⚠️" }
+					)
+				end,
 				desc = "Test Notification",
 			},
 
@@ -194,6 +227,19 @@ return {
 			{ "<S-A-k>", "<cmd>BufferLineMovePrev<cr>", desc = "Previous Buffer", mode = { "n" } },
 
 			{ "<leader>b", group = "Buffers", icon = { icon = icons.buffer } },
+			{
+				"<leader>bD",
+				function()
+					vim.ui.input({ prompt = "Delete Buffer - Force [ y/N ]: " }, function(input)
+						if input == "y" or input == "Y" then
+							trash_cli:put(vim.api.nvim_buf_get_name(0))
+							vim.cmd("Bdelete")
+						end
+					end)
+				end,
+				desc = "Delete Buffer - [ Force ]",
+				icon = { icon = icons.buffer },
+			},
 			{ "<leader>bd", "<cmd>Bdelete<cr>", icon = { icon = icons.buffer }, desc = "Delete Buffer" },
 			{
 				"<leader>bP",
@@ -362,12 +408,27 @@ return {
 			{ "<leader>lI", "<cmd>LspInfo<CR>", desc = "LSP Info", mode = { "n" } },
 			{ "<leader>lS", "<cmd>LspStop<CR>", desc = "Stop LSP", mode = { "n" } },
 			{ "<leader>ls", "<cmd>LspStart<CR>", desc = "Start LSP", mode = { "n" } },
-			{ "<leader>lt", function() toggle_word.toggle_word() end, desc = "Toggle Word LSP", mode = { "n" } },
+			{
+				"<leader>lt",
+				function()
+					toggle_word.toggle_word()
+				end,
+				desc = "Toggle Word LSP",
+				mode = { "n" },
+			},
 
 			-- Lazy Reload
 
 			{ "<leader>L", group = "Lazy", icon = { icon = icons.lazy }, mode = { "n" } },
-			{ "<leader>Lr", function() vim.api.nvim_feedkeys(":ReloadPlugin ", "n", false) end, icon = { icon = icons.lazy }, desc = "Lazy Reload", mode = { "n" } },
+			{
+				"<leader>Lr",
+				function()
+					vim.api.nvim_feedkeys(":ReloadPlugin ", "n", false)
+				end,
+				icon = { icon = icons.lazy },
+				desc = "Lazy Reload",
+				mode = { "n" },
+			},
 			{ "<leader>Ls", "<cmd>Lazy sync<cr>", icon = { icon = icons.lazy }, desc = "Lazy Sync", mode = { "n" } },
 
 			-- code Runner
@@ -375,18 +436,61 @@ return {
 			{ "<A-r>", "<cmd>ToggleTermCodeRunner<cr>", desc = "Run code", mode = { "n", "x", "i" } },
 
 			-- dashboard
-			{ "<leader>D", function() Snacks.dashboard.open() end, desc = "Dashboard", icon = { icon = icons.dashboard } },
+			{
+				"<leader>D",
+				function()
+					Snacks.dashboard.open()
+				end,
+				desc = "Dashboard",
+				icon = { icon = icons.dashboard },
+			},
 		}
 
 		-- Add Kitty-specific mappings
 		if terminal.is_kitty() then
 			table.insert(mappings, { "<leader>k", group = "Kitty-config", icon = { icon = icons.kitty.group } })
-			table.insert(mappings, { "<leader>ku", function() kitty.plus() end, desc = "Kitty Font +1" })
-			table.insert(mappings, { "<leader>kd", function() kitty.minus() end, desc = "Kitty Font -1" })
-			table.insert(mappings, { "<leader>kf", function() kitty.pick() end, desc = "kitty Font Picker" })
-			table.insert(mappings, { "<leader>ks", function() kitty.size() end, desc = "kitty Size Picker" })
-			table.insert(mappings, { "<leader>kr", function() kitty.reload() end, desc = "kitty Reload Config" })
-			table.insert(mappings, { "<leader>ki", function() kitty.status() end, desc = "kitty Status" })
+			table.insert(mappings, {
+				"<leader>ku",
+				function()
+					kitty.plus()
+				end,
+				desc = "Kitty Font +1",
+			})
+			table.insert(mappings, {
+				"<leader>kd",
+				function()
+					kitty.minus()
+				end,
+				desc = "Kitty Font -1",
+			})
+			table.insert(mappings, {
+				"<leader>kf",
+				function()
+					kitty.pick()
+				end,
+				desc = "kitty Font Picker",
+			})
+			table.insert(mappings, {
+				"<leader>ks",
+				function()
+					kitty.size()
+				end,
+				desc = "kitty Size Picker",
+			})
+			table.insert(mappings, {
+				"<leader>kr",
+				function()
+					kitty.reload()
+				end,
+				desc = "kitty Reload Config",
+			})
+			table.insert(mappings, {
+				"<leader>ki",
+				function()
+					kitty.status()
+				end,
+				desc = "kitty Status",
+			})
 		end
 
 		wk.add(mappings)
