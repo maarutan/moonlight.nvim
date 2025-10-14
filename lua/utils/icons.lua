@@ -79,6 +79,9 @@ M.trash_cli = {
 	restore = M.emoji.restore,
 }
 
+M.arrow = {
+	right = "󱦰",
+}
 M.spinner = {
 	f1 = "⠋",
 	f2 = "⠙",
