@@ -13,6 +13,7 @@ return {
 	{ r(d .. "notify_macro") },
 	{ r(d .. "matchup") },
 	{ r(d .. "scrollview") },
+	{ r(d .. "web_devicons") },
 
 	-- status line
 	{ r(d .. "lualine") },

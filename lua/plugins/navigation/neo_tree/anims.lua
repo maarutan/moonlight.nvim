@@ -2,11 +2,11 @@ local M = {}
 
 -- === settings ===
 local enabled = false -- enable/disable animation
-local mode = "float" -- "float" or "static"
-local h = "mlem" -- animation name
+local mode = "static" -- "float" or "static"
+local h = "static.kitty" -- animation name
 local padding_top = 1 -- empty lines above frames
 local padding_bottom = 1 -- empty lines below frames
-local delay = 100 -- frame delay (ms)
+local delay = 10000 -- frame delay (ms)
 local static_height = 8 -- height for static mode
 local position_offset = (mode == "float") and -1 or 0 -- vertical offset: -1 default for float
 local float_width_scale = 0.9 -- width scale for float mode (0–1)

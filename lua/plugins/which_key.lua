@@ -196,6 +196,13 @@ return {
 
 			{ "<leader>b", group = "Buffers", icon = { icon = icons.buffer } },
 			{
+				"<leader>br",
+				function() Snacks.rename.rename_file() end,
+				icon = { icon = icons.buffer },
+				desc = "Buffer Rename",
+				mode = { "n" },
+			},
+			{
 				"<leader>bD",
 				function()
 					vim.ui.input({ prompt = "Delete Buffer - Force [ y/N ]: " }, function(input)
