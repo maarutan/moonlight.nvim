@@ -1,14 +1,17 @@
+local r = require
+local ui = r("utils.ui")
+
 return {
 	"ecthelionvi/NeoComposer.nvim",
 	dependencies = { "kkharji/sqlite.lua" },
 	opts = {
-		notify = false,
+		notify = true,
 		delay_timer = 150,
 		queue_most_recent = false,
 		window = {
 			width = 60,
 			height = 10,
-			border = "rounded",
+			border = ui.border,
 			winhl = {
 				Normal = "ComposerNormal",
 			},
@@ -25,9 +28,16 @@ return {
 			yank_macro = "yq",
 			stop_macro = "cq",
 			toggle_record = "q",
-			-- cycle_next = "<C-A-n>",
-			-- cycle_prev = "<C-A-p>",
+			cycle_next = "mn",
+			cycle_prev = "mp",
 			toggle_macro_menu = "<m-q>",
 		},
 	},
+
+	config = function()
+		local ok, _ = pcall(function()
+			vim.keymap.del({ "i", "n" }, "mn")
+			vim.keymap.del({ "i", "n" }, "mp")
+		end)
+	end,
 }

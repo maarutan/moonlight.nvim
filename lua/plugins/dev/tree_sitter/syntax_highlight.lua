@@ -7,6 +7,7 @@ return {
 			ensure_installed = {
 				"c",
 				"cpp",
+				"regex",
 				"lua",
 				"vim",
 				"vimdoc",
@@ -56,10 +57,10 @@ return {
 
 			indent = { enable = true },
 
-            matchup = {
-                enable = true, -- mandatory, false will disable the whole extension
-                disable = { "" }, -- optional, list of languages to be disabled
-            },
+			matchup = {
+				enable = true, -- mandatory, false will disable the whole extension
+				disable = { "" }, -- optional, list of languages to be disabled
+			},
 
 			rainbow = {
 				enable = true,

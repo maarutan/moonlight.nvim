@@ -19,6 +19,7 @@ return {
 			},
 			lualine_c = {
 				{ "lsp_status", color = { gui = "bold", fg = "#ffffff" } },
+				-- r("NeoComposer").status_recording,
 				"filename",
 				r(m .. "dodbod_preivew"),
 				"diagnostics",

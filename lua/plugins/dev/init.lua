@@ -8,4 +8,5 @@ return {
 	r(d .. "lsp"),
 	r(d .. "tree_sitter"),
 	r(d .. "dadbod"),
+	r(d .. "base"),
 }
