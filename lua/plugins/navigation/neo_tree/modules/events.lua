@@ -4,7 +4,7 @@ local event = r("neo-tree.events")
 local d = "plugins.navigation.neo_tree."
 local m = d .. "modules."
 local anims = r(d .. "anims")
-local helper = r(d .. "helper")
+local helper = r(d .. "neo_tree_focus")
 
 -- Lua 5.1 / 5.4
 local unpack = table.unpack or unpack
@@ -14,44 +14,32 @@ local open_files = {}
 return {
 	{
 		event = event.NEO_TREE_BUFFER_ENTER,
-		handler = function()
-			vim.opt.relativenumber = true
-		end,
+		handler = function() vim.opt.relativenumber = true end,
 	},
 	{
-		event = event.VIM_BUFFER_ENTER,
+		event = event.NEO_TREE_BUFFER_ENTER,
 		handler = function(args)
 			local bufnr = args.buf or args.bufnr
-			if not bufnr or not vim.api.nvim_buf_is_valid(bufnr) then
-				return
-			end
-			helper.always_focus()
+			if not bufnr or not vim.api.nvim_buf_is_valid(bufnr) then return end
+			helper()
 		end,
 	},
 	{
 		event = event.FILE_OPENED,
 		handler = function(data)
-			if data.node and data.node.path then
-				open_files[data.node.path] = true
-			end
+			if data.node and data.node.path then open_files[data.node.path] = true end
 			for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-				if vim.api.nvim_buf_get_name(buf) == "" and vim.api.nvim_buf_get_option(buf, "buftype") == "" then
-					vim.api.nvim_buf_delete(buf, { force = true })
-				end
+				if vim.api.nvim_buf_get_name(buf) == "" and vim.api.nvim_buf_get_option(buf, "buftype") == "" then vim.api.nvim_buf_delete(buf, { force = true }) end
 			end
 		end,
 	},
 	{
 		event = event.FILE_MOVED,
-		handler = function(data)
-			rename(data.source, data.destination)
-		end,
+		handler = function(data) rename(data.source, data.destination) end,
 	},
 	{
 		event = event.FILE_RENAMED,
-		handler = function(data)
-			rename(data.source, data.destination)
-		end,
+		handler = function(data) rename(data.source, data.destination) end,
 	},
 
 	unpack(anims.event_handlers),
