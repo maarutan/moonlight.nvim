@@ -203,6 +203,38 @@ return {
 				mode = { "n" },
 			},
 			{
+				"<C-w>f",
+				function()
+					local wins = vim.api.nvim_list_wins()
+					local floating_wins = {}
+
+					for _, win in ipairs(wins) do
+						local config = vim.api.nvim_win_get_config(win)
+						if config.relative and config.relative ~= "" then table.insert(floating_wins, win) end
+					end
+
+					if #floating_wins == 0 then
+						print("No floating windows found")
+						return
+					end
+
+					local current = vim.api.nvim_get_current_win()
+					local start_idx = 0
+
+					for i, win in ipairs(floating_wins) do
+						if win == current then
+							start_idx = i
+							break
+						end
+					end
+
+					local next_idx = (start_idx % #floating_wins) + 1
+
+					vim.api.nvim_set_current_win(floating_wins[next_idx])
+				end,
+				desc = "Next Floating Window",
+			},
+			{
 				"<leader>bD",
 				function()
 					vim.ui.input({ prompt = "Delete Buffer - Force [ y/N ]: " }, function(input)
