@@ -2,6 +2,20 @@ return {
 	"famiu/bufdelete.nvim",
 	version = "*",
 	config = function()
+		vim.api.nvim_create_user_command("Bdelete", function(opts)
+			local bufnr = tonumber(opts.args)
+			if not bufnr then bufnr = vim.api.nvim_get_current_buf() end
+
+			vim.api.nvim_exec_autocmds("BufDelete", { buffer = bufnr })
+
+			require("bufdelete").bufdelete(bufnr, opts.bang)
+		end, {
+			bang = true,
+			nargs = "?",
+			complete = "buffer",
+			desc = "Close buffer and fire BufDelete autocmd first",
+		})
+
 		local exclude = {
 			"neo-tree",
 			"NvimTree",
@@ -21,14 +35,7 @@ return {
 					end
 				end
 
-				if
-					not skip
-					and vim.api.nvim_buf_is_loaded(bufnr)
-					and vim.bo[bufnr].buftype == ""
-					and vim.bo[bufnr].buflisted
-				then
-					table.insert(allowed, bufnr)
-				end
+				if not skip and vim.api.nvim_buf_is_loaded(bufnr) and vim.bo[bufnr].buftype == "" and vim.bo[bufnr].buflisted then table.insert(allowed, bufnr) end
 			end
 
 			return allowed

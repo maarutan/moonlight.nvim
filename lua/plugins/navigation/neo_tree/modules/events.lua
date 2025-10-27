@@ -4,7 +4,6 @@ local event = r("neo-tree.events")
 local d = "plugins.navigation.neo_tree."
 local m = d .. "modules."
 local anims = r(d .. "anims")
-local helper = r(d .. "neo_tree_focus")
 
 -- Lua 5.1 / 5.4
 local unpack = table.unpack or unpack
@@ -14,15 +13,7 @@ local open_files = {}
 return {
 	{
 		event = event.NEO_TREE_BUFFER_ENTER,
-		handler = function() vim.opt.relativenumber = true end,
-	},
-	{
-		event = event.NEO_TREE_BUFFER_ENTER,
-		handler = function(args)
-			local bufnr = args.buf or args.bufnr
-			if not bufnr or not vim.api.nvim_buf_is_valid(bufnr) then return end
-			helper()
-		end,
+		handler = function(args) vim.opt.relativenumber = true end,
 	},
 	{
 		event = event.FILE_OPENED,

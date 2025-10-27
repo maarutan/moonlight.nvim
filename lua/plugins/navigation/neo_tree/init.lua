@@ -53,5 +53,7 @@ return {
 				},
 			},
 		})
+
+		r(d .. "neo_tree_focus")
 	end,
 }

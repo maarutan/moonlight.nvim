@@ -20,6 +20,7 @@ local ignore_ft = {
 }
 
 local last_file ---@type string|nil
+local skip_reveal = false -- <- важный флаг
 
 ---@param parent string
 ---@param child string
@@ -83,6 +84,13 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	end,
 })
 
+vim.api.nvim_create_autocmd({ "BufDelete" }, {
+	callback = function(args)
+		local deleted_buf = args.buf or args.bufnr
+		if deleted_buf == vim.api.nvim_get_current_buf() then skip_reveal = true end
+	end,
+})
+
 vim.api.nvim_create_autocmd("WinEnter", {
 	callback = function()
 		local win = vim.api.nvim_get_current_win()
@@ -90,6 +98,11 @@ vim.api.nvim_create_autocmd("WinEnter", {
 		local ft = vim.bo[buf].filetype
 
 		if ft ~= "neo-tree" then return end
+
+		if skip_reveal then
+			skip_reveal = false
+			return
+		end
 
 		M.reveal_last_file_in_neotree()
 	end,
