@@ -22,6 +22,8 @@ function M.font_preview(ctx, last_ctx)
 		"-> PI            :  3.14159265359",
 		"-> Lorem ipsum   :  consectetur adipiscing elit.",
 		"-> Special chars :  !@#$%^&*()_+=-{}|~`?<>:;\\/.,",
+		"-> Legatures     : === !== != >= => <- www ***",
+		"-> Nerd Font     :   󰌠           󰮯  ",
 		"",
 	})
 	r(d .. "core").set_font(name)

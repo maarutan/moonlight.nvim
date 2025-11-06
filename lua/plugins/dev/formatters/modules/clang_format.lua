@@ -1,7 +1,7 @@
 local r = require
 local U = r("plugins.dev.formatters.helper")
 
-local style = "'{BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}'"
+local style = "'{BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 0}'"
 
 return {
 	format = function()

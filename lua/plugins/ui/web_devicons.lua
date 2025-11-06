@@ -6,7 +6,7 @@ return {
 			lua = { icon = "", color = "#51AFEF", name = "Lua" },
 			css = { icon = "", color = "#318CCA", name = "Css" },
 			html = { icon = "", color = "#F16A30", name = "Html" },
-			javascript = { icon = "", color = "#F7DF1E", name = "Js" },
+			javascript = { icon = "", color = "#F7DF1E", name = "Js" },
 			py = { icon = "", color = "#F7DF1E", name = "Python" },
 			typescriptxml = { icon = "", color = "#087ECE", name = "Tsx" },
 			javascriptxml = { icon = "", color = "#08D9FF", name = "Jsx" },
