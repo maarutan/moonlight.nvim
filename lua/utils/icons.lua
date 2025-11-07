@@ -28,6 +28,7 @@ M.complete = {
 M.lsp = ""
 
 M.git = {
+	git = "",
 	modified = "",
 	added = "",
 	untracked = "",

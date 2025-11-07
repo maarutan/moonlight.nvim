@@ -263,6 +263,52 @@ return {
 				mode = { "n" },
 			},
 
+			{ "<leader>bC", group = "Copy Buffers", icon = { icon = icons.buffer }, mode = { "n" } },
+			{
+				"<leader>bCp",
+				icon = { icon = icons.buffer },
+				function()
+					local path = vim.api.nvim_buf_get_name(0)
+					vim.fn.setreg("+", path)
+				end,
+				desc = "Copy Path",
+				mode = { "n" },
+			},
+			{
+				"<leader>bCf",
+				icon = { icon = icons.buffer },
+				function()
+					local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t")
+					vim.fn.setreg("+", path)
+				end,
+				desc = "Copy Filename",
+				mode = { "n" },
+			},
+			{
+				"<leader>bCw",
+				icon = { icon = icons.buffer },
+				function()
+					local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t:r")
+					vim.fn.setreg("+", path)
+				end,
+				desc = "Copy Filename without extension",
+				mode = { "n" },
+			},
+			{
+				"<leader>bCe",
+				icon = { icon = icons.buffer },
+				function()
+					local home = os.getenv("HOME") or os.getenv("USERPROFILE") or ""
+					local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":h")
+
+					if path:find(home, 1, true) then path = path:gsub("^" .. vim.pesc(home), "~") end
+
+					vim.fn.setreg("+", path)
+				end,
+				desc = "Copy Expand Path",
+				mode = { "n" },
+			},
+
 			{ "<leader>bs", group = "Sort Buffers", icon = { icon = icons.buffer }, mode = { "n" } },
 			{
 				"<leader>bsr",
@@ -444,6 +490,30 @@ return {
 				function() Snacks.dashboard.open() end,
 				desc = "Dashboard",
 				icon = { icon = icons.dashboard },
+			},
+			--Git
+			{
+				"<leader>g",
+				group = "Git",
+				icon = { icon = icons.git.git },
+			},
+			{
+				"<leader>gl",
+				"<cmd>GitGraph<cr>",
+				desc = "GitGraph - toggle",
+				icon = { icon = icons.git.git },
+			},
+			{
+				"<leader>gs",
+				function() Snacks.picker.git_status() end,
+				desc = "Git Status",
+				icon = { icon = icons.git.git },
+			},
+			{
+				"<leader>gd",
+				function() Snacks.picker.git_diff() end,
+				desc = "Git diff",
+				icon = { icon = icons.git.git },
 			},
 		}
 
