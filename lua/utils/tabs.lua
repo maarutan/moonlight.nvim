@@ -2,7 +2,6 @@ local function main()
 	--- Init `Tab` ---
 	tabs__on(4, {
 		"python",
-		"lua",
 		"bash",
 		"sh",
 		"zsh",
@@ -15,6 +14,7 @@ local function main()
 		"html",
 		"css",
 		"javascript",
+		"lua",
 		"tsx",
 		"jsx",
 		"c",
