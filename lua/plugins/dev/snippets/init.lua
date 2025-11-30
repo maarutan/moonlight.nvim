@@ -5,10 +5,12 @@ return {
 	dependencies = { "rafamadriz/friendly-snippets" },
 	config = function()
 		local r = require
+		local d = "plugins.dev.snippets.custom."
 		local luasnip = r("luasnip")
 
 		r("luasnip.loaders.from_vscode").lazy_load()
-		r("plugins.dev.snippets.custom.pyright")
+		r(d .. "pyright")
+		r(d .. "python")
 
 		luasnip.config.set_config({
 			history = true,
