@@ -1,6 +1,8 @@
 local r = require
 local d = "plugins.editing."
 
+r(d .. "js_tab")
+
 return {
 	r(d .. "bufdelete"),
 	r(d .. "auto_complete"),

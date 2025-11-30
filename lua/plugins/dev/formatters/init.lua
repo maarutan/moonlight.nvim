@@ -11,6 +11,7 @@ local stylua = r(m .. ".stylua")
 local ruff = r(m .. ".ruff")
 local black = r(m .. ".black")
 local clang_format = r(m .. ".clang_format")
+local xmlformat = r(m .. ".xmlformat")
 
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
@@ -34,6 +35,9 @@ return {
 			json = { prettier.format },
 			jsonc = { prettier.format },
 			markdown = { prettier.format },
+
+			----------        -- xmlformat
+			svg = { xmlformat.format },
 
 			----------        -- Ruff
 			python = { ruff.format },
@@ -73,7 +77,9 @@ return {
 
 		autocmd("BufWritePost", {
 			pattern = "*",
-			callback = function() vim.cmd("normal! zz") end,
+			callback = function()
+				vim.cmd("normal! zz")
+			end,
 		})
 	end,
 }
