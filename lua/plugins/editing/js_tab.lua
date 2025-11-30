@@ -17,14 +17,18 @@ function M.smart_tab()
 
 	local col = vim.fn.col(".")
 	local line = vim.fn.getline(".")
-	local next_chars = line:sub(col, col + 1)
+	local prev_char = line:sub(col - 1, col - 1)
+	local next_char = line:sub(col, col)
 
-	if next_chars == "()" or next_chars:sub(1, 1) == ")" then
-		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Right><Right> => ", true, false, true), "n", false)
-		return ""
-	else
-		return "\t"
+	if prev_char == "(" then
+		local rest = line:sub(col)
+		if rest:match("^%s*%)") then
+			vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Right> => ", true, false, true), "i", false)
+			return ""
+		end
 	end
+
+	return "\t"
 end
 
 vim.keymap.set("i", "<Tab>", M.smart_tab, { expr = true, noremap = true })
