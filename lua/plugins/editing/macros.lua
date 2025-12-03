@@ -30,14 +30,7 @@ return {
 			toggle_record = "q",
 			cycle_next = "mn",
 			cycle_prev = "mp",
-			toggle_macro_menu = "<m-q>",
+			toggle_macro_menu = "<A-q>",
 		},
 	},
-
-	config = function()
-		local ok, _ = pcall(function()
-			vim.keymap.del({ "i", "n" }, "mn")
-			vim.keymap.del({ "i", "n" }, "mp")
-		end)
-	end,
 }

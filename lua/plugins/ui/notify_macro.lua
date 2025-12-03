@@ -1,4 +1,5 @@
 return {
+	enabled = false,
 	"maarutan/macro-notify.nvim",
 	opts = {
 		message_start = "macro: ",
