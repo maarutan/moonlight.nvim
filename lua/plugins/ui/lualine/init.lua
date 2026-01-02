@@ -16,6 +16,11 @@ return {
 				"branch",
 				"diff",
 				r(m .. "repositories"),
+				{
+					function()
+						return require("NeoComposer.ui").status_recording()
+					end,
+				},
 			},
 			lualine_c = {
 				{ "lsp_status", color = { gui = "bold", fg = "#ffffff" } },
