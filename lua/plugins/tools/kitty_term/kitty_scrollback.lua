@@ -8,7 +8,7 @@ return {
 			"KittyScrollbackGenerateCommandLineEditing",
 		},
 		event = { "User KittyScrollbackLaunch" },
-		config = function() require("kitty-scrollback").setup() end,
+		config = function() require("kitty-scrollback").setup({ footer = true }) end,
 	},
 
 	-- bufferline
