@@ -62,14 +62,14 @@ moonlight.nvim strikes the perfect balance — fast, extensible, and ready out o
 
 - <details>
   <summary>🧠 Full LSP support out of the box</summary>
-  - 🐍 Python — `pyright`, `ruff`
-  - 🌐 HTML — `html`
-  - 🎨 CSS — `cssls`
-  - ⚡ JavaScript / TypeScript — `tsserver`
-  - 🌙 Lua — `lua_ls`
-  - 📝 Markdown — `marksman`
-  - 📦 JSON / YAML / TOML — `jsonls`, `yamlls`, `taplo`
-  - 🖥 Bash / Zsh — `bashls`
+  - 🐍 Python — `pyright`, `ruff` <br/>
+  - 🌐 HTML — `html` <br/>
+  - 🎨 CSS — `cssls` <br/>
+  - ⚡ JavaScript / TypeScript — `tsserver` <br/>
+  - 🌙 Lua — `lua_ls` <br/>
+  - 📝 Markdown — `marksman` <br/>
+  - 📦 JSON / YAML / TOML — `jsonls`, `yamlls`, `taplo` <br/>
+  - 🖥 Bash / Zsh — `bashls` <br/>
 
 </details>
 
