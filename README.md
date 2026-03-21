@@ -5,9 +5,9 @@
 <hr>
 
 <div align="center"><p>
-    <a href="https://github.com/maarutan/moonlight.nvim/releases/latest">
-      <img alt="Latest release" src="https://img.shields.io/github/v/release/maarutan/moonlight.nvim?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41&include_prerelease&sort=semver" />
-    </a>
+    <!-- <a href="https://github.com/maarutan/moonlight.nvim/releases/latest"> -->
+    <!--   <img alt="Latest release" src="https://img.shields.io/github/v/release/maarutan/moonlight.nvim?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41&include_prerelease&sort=semver" /> -->
+    <!-- </a> -->
     <a href="https://github.com/maarutan/moonlight.nvim/pulse">
       <img alt="Last commit" src="https://img.shields.io/github/last-commit/maarutan/moonlight.nvim?style=for-the-badge&logo=starship&color=8bd5ca&logoColor=D9E0EE&labelColor=302D41"/>
     </a>
@@ -27,7 +27,8 @@
 
 <hr>
 
+![Neovim](https://img.shields.io/badge/Neovim-0.9+-green?style=for-the-badge&logo=neovim)
+![Lua](https://img.shields.io/badge/Lua-config-blue?style=for-the-badge&logo=lua)
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/830e3938-7f6e-4bfb-b56c-cfa4cc848978" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4c2266b3-8b46-4139-8201-6d60cf666f76" />
-
-
