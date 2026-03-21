@@ -11,7 +11,7 @@
 <h4 align="center">
   <a href="#-getting-started">Install</a>
   ·
-  <a href="#-requirements">Dependencies</a>
+  <a href="#%EF%B8%8F-requirements">Requirements</a>
   ·
   <a href="#-screenshots">Screenshots</a>
 </h4>
@@ -118,3 +118,5 @@ Refer to the comments in the files on how to customize **moonlight.nvim**.
 ---
 
 ⭐ If you like this project, consider giving it a star!
+
+> Made with love by your maarutan ❤️
