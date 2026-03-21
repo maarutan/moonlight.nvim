@@ -1,5 +1,5 @@
 <div align="center">
-    <img width="446" height="106" alt="preview" src="https://raw.githubusercontent.com/maarutan/moonlight.nvim/main/assets/preview.png" />
+    <img width="446" height="106" alt="image" src="https://github.com/user-attachments/assets/2c0be76b-9603-4447-9524-fc0850288e1f" />
 </div>
 
 <p align="center">
@@ -48,11 +48,11 @@
 moonlight.nvim is a modern, full-featured Neovim IDE built on top of [💤 lazy.nvim](https://github.com/folke/lazy.nvim),
 focused on performance, clean UI/UX, and developer productivity.
 
-It provides a powerful plugin ecosystem, carefully selected defaults, and an optimized configuration,
-so you can start coding immediately without sacrificing flexibility.
+It comes with a powerful set of plugins, smart defaults, and an optimized configuration,
+allowing you to start coding immediately without sacrificing flexibility.
 
-Instead of choosing between a minimal setup or a heavy distro,
-moonlight.nvim delivers the perfect balance — fast, extensible, and ready out of the box.
+Rather than choosing between a minimal setup or a heavy distro,
+moonlight.nvim strikes the perfect balance — fast, extensible, and ready out of the box.
 
 ---
 
@@ -60,25 +60,23 @@ moonlight.nvim delivers the perfect balance — fast, extensible, and ready out 
 
 - ⚡ Fast startup powered by lazy.nvim
 - 🧠 Full LSP support out of the box
-- 🎨 Clean and modern UI
-- 📦 Rich plugin ecosystem
-- 🔧 Easy to extend and customize
+- 🎨 Clean and modern UI/UX
+- 📦 Carefully selected plugin ecosystem
+- 🔧 Highly customizable configuration
 
 ---
 
 ## 📸 Screenshots
 
-<p align="center">
-  <img width="100%" src="https://raw.githubusercontent.com/maarutan/moonlight.nvim/main/assets/screenshot1.png" />
-  <img width="100%" src="https://raw.githubusercontent.com/maarutan/moonlight.nvim/main/assets/screenshot2.png" />
-</p>
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/830e3938-7f6e-4bfb-b56c-cfa4cc848978" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4c2266b3-8b46-4139-8201-6d60cf666f76" />
 
 ---
 
 ## ⚡️ Requirements
 
-- Neovim >= **0.11.2** (built with **LuaJIT**)
-- Git >= **2.19.0**
+- Neovim >= **0.11.2** (needs to be built with **LuaJIT**)
+- Git >= **2.19.0** (for partial clones support)
 - a [Nerd Font](https://www.nerdfonts.com/) _(optional)_
 - a **C** compiler for `nvim-treesitter`
 
@@ -86,32 +84,34 @@ moonlight.nvim delivers the perfect balance — fast, extensible, and ready out 
 
 ## 🚀 Getting Started
 
-<details><summary>Install moonlight.nvim</summary>
+<details><summary>Install the moonlight.nvim Starter</summary>
 
-### Backup your current config
+- Make a backup of your current Neovim files:
 
 ```sh
 mv ~/.config/nvim ~/.config/nvim.bak
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
 ```
 
-### Clone repository
+- Clone the starter
 
 ```sh
 git clone --depth 1 https://github.com/maarutan/moonlight.nvim ~/.config/nvim
 ```
 
-### Remove git history (optional)
+- Remove the `.git` folder, so you can add it to your own repo later
 
 ```sh
 rm -rf ~/.config/nvim/.git
 ```
 
-### Start Neovim
+- Start Neovim!
 
 ```sh
 nvim
 ```
+
+Refer to the comments in the files on how to customize **moonlight.nvim**.
 
 </details>
 
