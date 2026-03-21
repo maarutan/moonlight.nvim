@@ -1,0 +1,18 @@
+return {
+	dir = "📁",
+	file = "📄",
+	unknown = "❓",
+	error = "❌",
+	pin = "📌",
+	resize = "♻️",
+	warn = "⚠️",
+	put_trash = "🚮",
+	trash = "🗑️",
+	restore = "♻️",
+	rocket = "🚀",
+	lightning = "⚡️",
+	dream = "💤",
+	success = "✅",
+	light_bulb = "💡",
+	skull = "💀",
+}
