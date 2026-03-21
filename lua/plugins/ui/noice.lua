@@ -8,8 +8,18 @@ return {
 	dependencies = { "MunifTanjim/nui.nvim" },
 	opts = {
 		lsp = {
-			signature = { opts = { size = { max_height = 10, max_width = 60 }, border = options.border } },
-			hover = { opts = { size = { max_height = 20, max_width = 60 }, border = options.border } },
+			signature = {
+				opts = {
+					size = { max_height = 10, max_width = 60 },
+					border = options.border,
+				},
+			},
+			hover = {
+				opts = {
+					size = { max_height = 20, max_width = 60 },
+					border = options.border,
+				},
+			},
 			override = {
 				["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 				["vim.lsp.util.stylize_markdown"] = true,
@@ -19,17 +29,25 @@ return {
 		cmdline = {
 			enabled = true,
 			format = {
-				cmdline = { pattern = "^:", icon = const.icons.ui.mode.terminal, lang = "vim" },
+				cmdline = {
+					pattern = "^:",
+					icon = const.icons.ui.mode.terminal .. " ",
+					lang = "vim",
+				},
 				search_down = {
 					kind = "search",
 					pattern = "^/",
-					icon = const.icons.ui.search .. " " .. const.icons.ui.duble_arrows.down,
+					icon = const.icons.ui.search
+						.. " "
+						.. const.icons.ui.duble_arrows.down,
 					lang = "regex",
 				},
 				search_up = {
 					kind = "search",
 					pattern = "^%?",
-					icon = const.icons.ui.search .. " " .. const.icons.ui.duble_arrows.up,
+					icon = const.icons.ui.search
+						.. " "
+						.. const.icons.ui.duble_arrows.up,
 					lang = "regex",
 				},
 				filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
@@ -71,10 +89,14 @@ return {
 	config = function(_, opts)
 		require("noice").setup(opts)
 
-		local grp = vim.api.nvim_create_augroup("NoiceBackdrop", { clear = true })
+		local grp =
+			vim.api.nvim_create_augroup("NoiceBackdrop", { clear = true })
 
 		local function open_backdrop()
-			if vim.g._noice_backdrop_win and vim.api.nvim_win_is_valid(vim.g._noice_backdrop_win) then
+			if
+				vim.g._noice_backdrop_win
+				and vim.api.nvim_win_is_valid(vim.g._noice_backdrop_win)
+			then
 				return
 			end
 			local buf = vim.api.nvim_create_buf(false, true)
@@ -92,7 +114,11 @@ return {
 			if vim.fn.hlexists("NoiceBackdrop") == 0 then
 				vim.api.nvim_set_hl(0, "NoiceBackdrop", { bg = "#000000" })
 			end
-			vim.api.nvim_win_set_option(win, "winhighlight", "Normal:NoiceBackdrop")
+			vim.api.nvim_win_set_option(
+				win,
+				"winhighlight",
+				"Normal:NoiceBackdrop"
+			)
 			pcall(vim.api.nvim_win_set_option, win, "winblend", 70)
 			vim.g._noice_backdrop_win = win
 		end
@@ -105,14 +131,18 @@ return {
 			vim.g._noice_backdrop_win = nil
 		end
 
-		vim.api.nvim_create_autocmd("CmdlineEnter", { group = grp, callback = open_backdrop })
-		vim.api.nvim_create_autocmd("CmdlineLeave", { group = grp, callback = close_backdrop })
+		vim.api.nvim_create_autocmd(
+			"CmdlineEnter",
+			{ group = grp, callback = open_backdrop }
+		)
+		vim.api.nvim_create_autocmd(
+			"CmdlineLeave",
+			{ group = grp, callback = close_backdrop }
+		)
 		vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
 			group = grp,
 			callback = function()
-				if vim.fn.mode():find("c") then
-					return
-				end
+				if vim.fn.mode():find("c") then return end
 				close_backdrop()
 			end,
 		})
