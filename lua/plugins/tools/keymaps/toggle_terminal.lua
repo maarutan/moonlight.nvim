@@ -1,7 +1,18 @@
 local icons = require("utils.constants.icons")
 
 return {
-	{ "<C-t>", "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal", icon = { icon = icons.ui.mode.terminal } },
+	{
+		"<C-t>",
+		"<cmd>ToggleTerm<cr>",
+		desc = "Toggle Terminal",
+		icon = { icon = icons.ui.mode.terminal },
+	},
+	{
+		"<leader>tr",
+		"<cmd>ToggleTermCodeRunner<cr>",
+		desc = "Terminal Code Runner",
+		icon = { icon = icons.emoji.rocket },
+	},
 	{
 		"<leader>tt",
 		"<cmd>ToggleTerm direction=tab<cr>",
