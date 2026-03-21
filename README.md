@@ -24,3 +24,10 @@
       <img alt="Repo Size" src="https://img.shields.io/github/repo-size/maarutan/moonlight.nvim?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41" />
     </a>
 </div>
+
+<hr>
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/830e3938-7f6e-4bfb-b56c-cfa4cc848978" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4c2266b3-8b46-4139-8201-6d60cf666f76" />
+
+
