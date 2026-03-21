@@ -2,9 +2,7 @@ local which = require("utils.which")
 local lsp = require("utils.lsp")
 local tool = "emmet_ls"
 
-if not which:is_exists("emmet-ls") then
-	return
-end
+if not which:is_exists("emmet-ls") then return end
 
 vim.lsp.config(tool, {
 	capabilities = lsp.capabilities(),
@@ -17,6 +15,7 @@ vim.lsp.config(tool, {
 		"typescriptreact",
 		"pug",
 		"templ",
+		"markdown",
 	},
 	init_options = {
 		includeLanguages = {},

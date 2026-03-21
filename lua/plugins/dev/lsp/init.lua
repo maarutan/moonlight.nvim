@@ -45,7 +45,10 @@ return {
 		require("plugins.dev.lsp.yaml")
 		require("plugins.dev.lsp.toml")
 
-		-- --- Bash Zsh
+		--- Bash Zsh
 		require("plugins.dev.lsp.sh")
+
+		--- Markdown
+		require("plugins.dev.lsp.markdown")
 	end,
 }

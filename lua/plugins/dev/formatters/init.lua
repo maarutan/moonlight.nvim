@@ -16,6 +16,9 @@ return {
 			xml = { "xmlformat" },
 			c = { "clang-format" },
 			cpp = { "clang-format" },
+			markdown = { "prettier" },
+			json = { "prettier" },
+			jsonc = { "prettier" },
 		},
 
 		format_on_save = {
