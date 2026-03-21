@@ -62,6 +62,7 @@ moonlight.nvim strikes the perfect balance — fast, extensible, and ready out o
 
 - <details>
   <summary>🧠 Full LSP support out of the box</summary>
+  <br/>
   - 🐍 Python — `pyright`, `ruff` <br/>
   - 🌐 HTML — `html` <br/>
   - 🎨 CSS — `cssls` <br/>
