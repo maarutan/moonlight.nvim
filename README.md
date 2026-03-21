@@ -21,12 +21,15 @@
     <a href="https://github.com/maarutan/moonlight.nvim">
       <img alt="Repo Size" src="https://img.shields.io/github/repo-size/maarutan/moonlight.nvim?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41" />
     </a>
-
-    <img alt="Neovim" src="https://img.shields.io/badge/Neovim-0.11+-8bd5ca?style=for-the-badge&logo=neovim&logoColor=D9E0EE&labelColor=302D41" />
-    <img alt="Lua" src="https://img.shields.io/badge/Lua-config-c69ff5?style=for-the-badge&logo=lua&logoColor=D9E0EE&labelColor=302D41" />
-
-    <a href="https://wakatime.com/badge/user/e49eaebf-2429-4aa4-919b-670e8ef6be5c/project/51d62c9b-ad58-4613-86e2-46e1c2a8a606"><img src="https://wakatime.com/badge/user/e49eaebf-2429-4aa4-919b-670e8ef6be5c/project/51d62c9b-ad58-4613-86e2-46e1c2a8a606.svg" alt="wakatime"></a>
-
+    <a>
+        <img alt="Neovim" src="https://img.shields.io/badge/Neovim-0.11+-8bd5ca?style=for-the-badge&logo=neovim&logoColor=D9E0EE&labelColor=302D41" />
+    </a>
+    <a>
+        <img alt="Lua" src="https://img.shields.io/badge/Lua-config-c69ff5?style=for-the-badge&logo=lua&logoColor=D9E0EE&labelColor=302D41" />
+    </a>
+    <a href="https://wakatime.com/badge/user/e49eaebf-2429-4aa4-919b-670e8ef6be5c/project/51d62c9b-ad58-4613-86e2-46e1c2a8a606">
+        <img src="https://wakatime.com/badge/user/e49eaebf-2429-4aa4-919b-670e8ef6be5c/project/51d62c9b-ad58-4613-86e2-46e1c2a8a606.svg" alt="wakatime">
+    </a>
 </div>
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/830e3938-7f6e-4bfb-b56c-cfa4cc848978" />
