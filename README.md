@@ -23,10 +23,10 @@
     </a>
 </div>
 
-<img alt="Neovim" src="https://img.shields.io/badge/Neovim-0.9+-8bd5ca?style=for-the-badge&logo=neovim&logoColor=D9E0EE&labelColor=302D41" />
+<img alt="Neovim" src="https://img.shields.io/badge/Neovim-0.11+-8bd5ca?style=for-the-badge&logo=neovim&logoColor=D9E0EE&labelColor=302D41" />
 <img alt="Lua" src="https://img.shields.io/badge/Lua-config-c69ff5?style=for-the-badge&logo=lua&logoColor=D9E0EE&labelColor=302D41" />
 
-![Neovim](https://img.shields.io/badge/Neovim-0.9+-green?style=for-the-badge&logo=neovim)
+<a href="https://wakatime.com/badge/user/e49eaebf-2429-4aa4-919b-670e8ef6be5c/project/51d62c9b-ad58-4613-86e2-46e1c2a8a606"><img src="https://wakatime.com/badge/user/e49eaebf-2429-4aa4-919b-670e8ef6be5c/project/51d62c9b-ad58-4613-86e2-46e1c2a8a606.svg" alt="wakatime"></a>
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/830e3938-7f6e-4bfb-b56c-cfa4cc848978" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4c2266b3-8b46-4139-8201-6d60cf666f76" />
