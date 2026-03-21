@@ -4,12 +4,6 @@
 
 <hr>
 
-<div align="center">
-    <img width="446" height="106" alt="preview" src="https://github.com/user-attachments/assets/2c0be76b-9603-4447-9524-fc0850288e1f" />
-</div>
-
-<hr>
-
 <div align="center"><p>
     <a href="https://github.com/maarutan/moonlight.nvim/releases/latest">
       <img alt="Latest release" src="https://img.shields.io/github/v/release/maarutan/moonlight.nvim?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41&include_prerelease&sort=semver" />
