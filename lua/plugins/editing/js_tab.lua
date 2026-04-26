@@ -27,7 +27,11 @@ function M.smart_tab()
 	if prev_char == "(" then
 		local rest = line:sub(col)
 		if rest:match("^%s*%)") then
-			vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Right> => ", true, false, true), "i", false)
+			vim.api.nvim_feedkeys(
+				vim.api.nvim_replace_termcodes("<Right> => ", true, false, true),
+				"i",
+				false
+			)
 			return ""
 		end
 	end

@@ -20,8 +20,16 @@ return {
 		override_by_filename = {
 			["css.map"] = { icon = files["css.map"], color = "#318CCA", name = "Map" },
 			[".gitignore"] = { icon = files.git, color = "#f1502f", name = "Gitignore" },
-			[".python-version"] = { icon = files.python, color = "#89B4FB", name = "python-version" },
-			["requirements.txt"] = { icon = files.configtxt, color = "#89B4FB", name = "requirements.txt" },
+			[".python-version"] = {
+				icon = files.python,
+				color = "#89B4FB",
+				name = "python-version",
+			},
+			["requirements.txt"] = {
+				icon = files.configtxt,
+				color = "#89B4FB",
+				name = "requirements.txt",
+			},
 			[".tridactylrc"] = { icon = files.paw, color = "#428850", name = "tridactylrc" },
 		},
 	},

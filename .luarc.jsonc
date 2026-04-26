@@ -1,20 +1,3 @@
 {
-    "diagnostics.disable": [
-        "inject-field",
-        "undefined-doc-name",
-        "different-requires",
-        "undefined-global",
-        "lowercase-global",
-        "undefined-field",
-        "need-check-nil",
-        "unused-local",
-        "deprecated",
-        "redundant-return-value",
-        "cast-local-type",
-        "assign-type-mismatch"
-    ],
-    "diagnostics.globals": [
-        "vim",
-        "c"
-    ]
+  "diagnostics.globals": "vim"
 }

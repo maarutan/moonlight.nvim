@@ -29,7 +29,7 @@ return {
 		opts = function()
 			return {
 				ensure_installed = require("plugins.dev.mason.tools_register"),
-				auto_update = true,
+				auto_update = false,
 				run_on_start = true,
 			}
 		end,

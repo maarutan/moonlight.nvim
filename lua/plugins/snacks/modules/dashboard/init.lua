@@ -22,12 +22,15 @@ return {
 				key = "n",
 				desc = " _  " .. const.icons.ui.arrows.right .. " New File",
 				action = function()
-					vim.ui.input({ prompt = const.icons.ui.files.new .. " File Name: " }, function(filename)
-						if filename and filename ~= "" then
-							vim.cmd("edit " .. filename)
-							vim.cmd("write")
+					vim.ui.input(
+						{ prompt = const.icons.ui.files.new .. " File Name: " },
+						function(filename)
+							if filename and filename ~= "" then
+								vim.cmd("edit " .. filename)
+								vim.cmd("write")
+							end
 						end
-					end)
+					)
 				end,
 			},
 			{
@@ -51,7 +54,10 @@ return {
 				key = "c",
 				desc = " _  " .. const.icons.ui.arrows.right .. " Config",
 				action = function()
-					Snacks.picker.files({ cwd = vim.fn.stdpath("config"), confirm = { "edit", "tcd" } })
+					Snacks.picker.files({
+						cwd = vim.fn.stdpath("config"),
+						confirm = { "edit", "tcd" },
+					})
 				end,
 			},
 			{
@@ -76,7 +82,11 @@ return {
 	sections = {
 		{ section = "header", align = "start" },
 		{ section = "keys", padding = 2 },
-		{ text = "Welcome back, `" .. os.user .. "` " .. const.icons.emoji.dream, align = "start", padding = 1 },
+		{
+			text = "Welcome back, `" .. os.user .. "` " .. const.icons.emoji.dream,
+			align = "start",
+			padding = 1,
+		},
 		{ section = "startup" },
 		{ require("plugins.snacks.modules.dashboard.ascii_art") },
 		{ require("plugins.snacks.modules.dashboard.author") },

@@ -1,2 +1,2 @@
-column_width = 80
-collapse_simple_statement = "Always"
+column_width = 100
+collapse_simple_statement = "Never"

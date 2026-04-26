@@ -27,8 +27,14 @@ return {
 				ghost_text = false,
 			},
 
-			cmp.setup.cmdline(":", require("plugins.editing.auto_complete.modules.mappings.cmdline")),
-			cmp.setup.cmdline({ "/", "?" }, require("plugins.editing.auto_complete.modules.mappings.finder")),
+			cmp.setup.cmdline(
+				":",
+				require("plugins.editing.auto_complete.modules.mappings.cmdline")
+			),
+			cmp.setup.cmdline(
+				{ "/", "?" },
+				require("plugins.editing.auto_complete.modules.mappings.finder")
+			),
 		})
 		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 

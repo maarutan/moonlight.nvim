@@ -5,7 +5,13 @@ local module_name = "noice"
 return {
 	function()
 		local ok, noice = which:is_module_exists(module_name)
-		if not ok or not noice or not noice.api or not noice.api.status or not noice.api.status.command then
+		if
+			not ok
+			or not noice
+			or not noice.api
+			or not noice.api.status
+			or not noice.api.status.command
+		then
 			return "[ " .. const.icons.diagnostic.warn .. " not found `noice` ]"
 		end
 

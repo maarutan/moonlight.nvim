@@ -32,7 +32,11 @@ function Which:ensure_method(tbl, method)
 
 	local fn = tbl[method]
 	if type(fn) ~= "function" then
-		vim.notify(string.format("Missing method '%s' in table", method), vim.log.levels.WARN, { title = "Which" })
+		vim.notify(
+			string.format("Missing method '%s' in table", method),
+			vim.log.levels.WARN,
+			{ title = "Which" }
+		)
 		return false
 	end
 

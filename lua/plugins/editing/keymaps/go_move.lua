@@ -16,8 +16,23 @@ return {
 	{ "<A-S-C-k>", "<Plug>GoNSDUp", desc = "Duplicate " .. icons.arrows.up, mode = "n" },
 	{ "<A-S-C-l>", "<Plug>GoNSDRight", desc = "Duplicate " .. icons.arrows.right, mode = "n" },
 
-	{ "<A-S-C-h>", "<Plug>GoVSDLeft", desc = "Duplicate selection " .. icons.arrows.left, mode = "x" },
-	{ "<A-S-C-j>", "<Plug>GoVSDDown", desc = "Duplicate selection " .. icons.arrows.down, mode = "x" },
+	{
+		"<A-S-C-h>",
+		"<Plug>GoVSDLeft",
+		desc = "Duplicate selection " .. icons.arrows.left,
+		mode = "x",
+	},
+	{
+		"<A-S-C-j>",
+		"<Plug>GoVSDDown",
+		desc = "Duplicate selection " .. icons.arrows.down,
+		mode = "x",
+	},
 	{ "<A-S-C-k>", "<Plug>GoVSDUp", desc = "Duplicate selection " .. icons.arrows.up, mode = "x" },
-	{ "<A-S-C-l>", "<Plug>GoVSDRight", desc = "Duplicate selection " .. icons.arrows.right, mode = "x" },
+	{
+		"<A-S-C-l>",
+		"<Plug>GoVSDRight",
+		desc = "Duplicate selection " .. icons.arrows.right,
+		mode = "x",
+	},
 }

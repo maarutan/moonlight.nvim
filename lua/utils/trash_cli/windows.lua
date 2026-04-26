@@ -171,7 +171,9 @@ function Trash_cli:restore()
 	end
 
 	local original_path = entry.original_path
-	local filename = entry.filename or (original_path and self:_basename(original_path)) or "Unknown"
+	local filename = entry.filename
+		or (original_path and self:_basename(original_path))
+		or "Unknown"
 
 	if not original_path or original_path == "" then
 		vim.notify("Invalid restore entry", vim.log.levels.ERROR, { title = "Restore" })
@@ -243,7 +245,11 @@ Move-Item -LiteralPath $item.Path -Destination '%s'
 
 	local result, err = self:_powershell(script)
 	if not result then
-		vim.notify("Failed to restore:\n" .. tostring(err), vim.log.levels.ERROR, { title = "Restore" })
+		vim.notify(
+			"Failed to restore:\n" .. tostring(err),
+			vim.log.levels.ERROR,
+			{ title = "Restore" }
+		)
 		return
 	end
 

@@ -225,7 +225,11 @@ function Trash_cli:restore()
 
 	local ok, err = self:_move(trash_path, restore_path)
 	if not ok then
-		vim.notify("Failed to restore:\n" .. tostring(err), vim.log.levels.ERROR, { title = "Restore" })
+		vim.notify(
+			"Failed to restore:\n" .. tostring(err),
+			vim.log.levels.ERROR,
+			{ title = "Restore" }
+		)
 		return
 	end
 

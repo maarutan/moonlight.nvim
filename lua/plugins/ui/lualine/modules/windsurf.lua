@@ -65,11 +65,17 @@ return {
 			return "%#WindsurfThink#" .. spinner_symbol .. " " .. const.icons.ui.brain
 		elseif status.state == "completions" and (status.total or 0) > 0 then
 			return "%#WindsurfComplete#"
-				.. string.format("%s %d/%d", const.icons.ui.ai.finded, status.current or 0, status.total)
+				.. string.format(
+					"%s %d/%d",
+					const.icons.ui.ai.finded,
+					status.current or 0,
+					status.total
+				)
 		elseif status.state == "idle" then
 			return "%#WindsurfIdle#" .. const.icons.ui.ai.idle
 		elseif status.state == "not_found" then
-			return "%#WindsurfNotFound#" .. ("[ " .. const.icons.ui.ai.not_found .. " ? `Windsurf` ]")
+			return "%#WindsurfNotFound#"
+				.. ("[ " .. const.icons.ui.ai.not_found .. " ? `Windsurf` ]")
 		else
 			return "%#WindsurfNotFound#" .. "[ ? `Windsurf` ]"
 		end

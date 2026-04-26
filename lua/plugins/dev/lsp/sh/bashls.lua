@@ -11,7 +11,8 @@ vim.lsp.config(tool, {
 	filetypes = { "sh", "bash", "zsh" },
 	settings = {
 		bashIde = {
-			globPattern = vim.env.GLOB_PATTERN or "*@(.sh|.inc|.bash|.command|.zsh|.zshrc|zshrc|.zprofile|.zlogin|.zlogout)",
+			globPattern = vim.env.GLOB_PATTERN
+				or "*@(.sh|.inc|.bash|.command|.zsh|.zshrc|zshrc|.zprofile|.zlogin|.zlogout)",
 		},
 	},
 })

@@ -24,7 +24,9 @@ map({ "n", "x" }, "<C-d>", function()
 end, { silent = false, desc = "Scroll down" })
 
 -- Clear search
-map({ "n", "x" }, "<Esc>", function () vim.cmd("nohlsearch") end, { silent = true, desc = "Clear search highlight" })
+map({ "n", "x" }, "<Esc>", function()
+	vim.cmd("nohlsearch")
+end, { silent = true, desc = "Clear search highlight" })
 
 -- Save
 map({ "i", "n", "x" }, "<C-s>", "<cmd>w<cr>", { silent = true, desc = "Save File" })

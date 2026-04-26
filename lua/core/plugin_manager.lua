@@ -22,7 +22,10 @@ if not uv.fs_stat(lazypath) then
 	})
 	if not ok or vim.v.shell_error ~= 0 then
 		vim.api.nvim_echo({
-			{ const.icons.diagnostic.error .. " Error cloning lazy.nvim:\n", "ErrorMsg" },
+			{
+				const.icons.diagnostic.error .. " Error cloning lazy.nvim:\n",
+				"ErrorMsg",
+			},
 			{ out or "unknown error", "WarningMsg" },
 			{ "\n ~> Press Enter to continue...", "Normal" },
 		}, true, {})
@@ -41,6 +44,7 @@ end
 
 ---@diagnostic disable-next-line: redefined-local
 local ok, err = which:safe_setup("lazy", {
+	ui = { border = options.border },
 	spec = { require("plugins") },
 	checker = { enabled = false },
 })

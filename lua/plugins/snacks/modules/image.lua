@@ -84,14 +84,34 @@ return {
 		---@type snacks.image.args
 		mermaid = function()
 			local theme = vim.o.background == "light" and "neutral" or "dark"
-			return { "-i", "{src}", "-o", "{file}", "-b", "transparent", "-t", theme, "-s", "{scale}" }
+			return {
+				"-i",
+				"{src}",
+				"-o",
+				"{file}",
+				"-b",
+				"transparent",
+				"-t",
+				theme,
+				"-s",
+				"{scale}",
+			}
 		end,
 		---@type table<string,snacks.image.args>
 		magick = {
 			default = { "{src}[0]", "-scale", "1920x1080>" }, -- default for raster images
 			vector = { "-density", 192, "{src}[0]" }, -- used by vector images like svg
 			math = { "-density", 192, "{src}[0]", "-trim" },
-			pdf = { "-density", 192, "{src}[0]", "-background", "white", "-alpha", "remove", "-trim" },
+			pdf = {
+				"-density",
+				192,
+				"{src}[0]",
+				"-background",
+				"white",
+				"-alpha",
+				"remove",
+				"-trim",
+			},
 		},
 	},
 	math = {

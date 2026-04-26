@@ -1,23 +1,10 @@
 return {
 	"kylechui/nvim-surround",
-	version = "*",
+	version = "^4.0.0",
+
 	event = "VeryLazy",
 	opts = {
-		keymaps = {
-			insert = "<C-g>s",
-			insert_line = "<C-g>S",
-			normal = "ys",
-			normal_cur = "yss",
-			normal_line = "yS",
-			normal_cur_line = "ySS",
-			visual = "S",
-			visual_line = "gS",
-			delete = "ds",
-			change = "cs",
-			change_line = "cS",
-		},
-
-		aliases = {
+		akiases = {
 			["a"] = ">",
 			["b"] = ")",
 			["B"] = "}",
@@ -25,5 +12,18 @@ return {
 			["q"] = { '"', "'", "`" },
 			["s"] = { "}", "]", ")", ">", '"', "'", "`" },
 		},
+	},
+	keys = {
+		{ "ys", mode = "n" },
+		{ "yss", mode = "n" },
+		{ "yS", mode = "n" },
+		{ "ySS", mode = "n" },
+		{ "ds", mode = "n" },
+		{ "cs", mode = "n" },
+		{ "cS", mode = "n" },
+		{ "S", mode = "x" },
+		{ "gS", mode = "x" },
+		{ "<C-g>s", mode = "i" },
+		{ "<C-g>S", mode = "i" },
 	},
 }

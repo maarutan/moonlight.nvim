@@ -55,7 +55,11 @@ if is_not_found_deps then
 
 	for _, dep in ipairs(not_found_deps) do
 		vim.api.nvim_err_writeln(
-			string.format("   %s [not found]  Dependency   =   '%s'", const.icons.diagnostic.warn, dep)
+			string.format(
+				"   %s [not found]  Dependency   =   '%s'",
+				const.icons.diagnostic.warn,
+				dep
+			)
 		)
 	end
 

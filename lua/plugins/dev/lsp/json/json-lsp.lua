@@ -12,6 +12,7 @@ vim.lsp.config(tool, {
 	settings = {
 		json = {
 			validate = { enable = true },
+			format = { enable = true },
 		},
 	},
 })

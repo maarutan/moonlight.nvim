@@ -6,7 +6,6 @@ if not which:is_exists("typescript-language-server") then
 	return
 end
 
-
 vim.lsp.config(tool, {
 	capabilities = lsp.capabilities(),
 	filetypes = {

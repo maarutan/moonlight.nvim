@@ -17,10 +17,21 @@ return {
 			DONE = { icon = const.icons.diagnostic.done .. " ", color = "info" },
 			TODO = { icon = const.icons.diagnostic.done .. " ", color = "info" },
 			HACK = { icon = const.icons.diagnostic.hack .. " ", color = "warning" },
-			WARN = { icon = const.icons.diagnostic.warn .. " ", color = "warning", alt = { "WARNING", "XXX" } },
-			PERF = { icon = const.icons.diagnostic.perf .. " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+			WARN = {
+				icon = const.icons.diagnostic.warn .. " ",
+				color = "warning",
+				alt = { "WARNING", "XXX" },
+			},
+			PERF = {
+				icon = const.icons.diagnostic.perf .. " ",
+				alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" },
+			},
 			NOTE = { icon = const.icons.diagnostic.info .. " ", color = "hint", alt = { "INFO" } },
-			TEST = { icon = const.icons.diagnostic.test .. " ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+			TEST = {
+				icon = const.icons.diagnostic.test .. " ",
+				color = "test",
+				alt = { "TESTING", "PASSED", "FAILED" },
+			},
 		},
 		gui_style = {
 			fg = "NONE",

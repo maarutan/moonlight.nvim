@@ -19,6 +19,7 @@ return {
 			end
 		end
 		local dir, file = fname:match("^(.*)/(.+)$")
-		return dir and { { dir .. "/", hl = "dir" }, { file, hl = "file" } } or { { fname, hl = "file" } }
+		return dir and { { dir .. "/", hl = "dir" }, { file, hl = "file" } }
+			or { { fname, hl = "file" } }
 	end,
 }

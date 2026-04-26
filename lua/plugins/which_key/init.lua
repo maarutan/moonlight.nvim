@@ -1,7 +1,6 @@
 local options = require("core.options")
 local merge = require("utils.table").merge
 
-
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
@@ -13,6 +12,6 @@ return {
 	config = function(_, opts)
 		local wk = require("which-key")
 		wk.setup(opts)
-    wk.add(merge(require("plugins.which_key.register")))
+		wk.add(merge(require("plugins.which_key.register")))
 	end,
 }

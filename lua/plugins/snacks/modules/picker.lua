@@ -15,7 +15,12 @@ return {
 			border = options.border,
 			{
 				box = "vertical",
-				{ win = "list", title = " Results ", title_pos = "center", border = options.border },
+				{
+					win = "list",
+					title = " Results ",
+					title_pos = "center",
+					border = options.border,
+				},
 				{
 					win = "input",
 					height = 1,

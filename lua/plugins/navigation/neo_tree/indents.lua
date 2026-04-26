@@ -7,7 +7,8 @@ return {
 	-- indent guides
 	with_markers = true,
 	indent_marker = const.icons.ui.listchars.indent_line,
-	last_indent_marker = const.icons.ui.listchars.last_indent_marker .. const.icons.ui.listchars.horizontal_bar,
+	last_indent_marker = const.icons.ui.listchars.last_indent_marker
+		.. const.icons.ui.listchars.horizontal_bar,
 	highlight = "NeoTreeIndentMarker",
 
 	-- expander config, needed for nesting files

@@ -8,7 +8,7 @@ return merge(
 		"emmet-ls", -- npm
 		"html-lsp", -- npm
 		"css-lsp", -- npm
-    "eslint_d", -- npm
+		"eslint_d", -- npm
 
 		--- Python
 		"pyright", -- npm
@@ -17,7 +17,7 @@ return merge(
 		--- Lua
 		"lua-language-server", -- github
 		"stylua", -- github
-    "selene", -- github
+		"selene", -- github
 
 		--- Markdown
 		"marksman", -- github

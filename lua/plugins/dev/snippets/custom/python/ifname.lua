@@ -1,6 +1,8 @@
 local r = require
 local which = r("utils.which")
-if not which:is_module_exists("luasnip") then return end
+if not which:is_module_exists("luasnip") then
+	return
+end
 
 local luasnip = r("luasnip")
 

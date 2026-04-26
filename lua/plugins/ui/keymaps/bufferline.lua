@@ -71,7 +71,13 @@ return {
 		icon = { icon = icons.ui.buffer },
 	},
 
-	{ "<S-j>", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer ", mode = { "n" }, icon = { icon = icons.ui.buffer } },
+	{
+		"<S-j>",
+		"<cmd>BufferLineCycleNext<cr>",
+		desc = "Next Buffer ",
+		mode = { "n" },
+		icon = { icon = icons.ui.buffer },
+	},
 	{
 		"<S-k>",
 		"<cmd>BufferLineCyclePrev<cr>",

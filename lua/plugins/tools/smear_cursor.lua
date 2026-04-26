@@ -2,6 +2,7 @@ local terminal = require("utils.terminal")
 
 return {
 	"sphamba/smear-cursor.nvim",
+	enabled = false,
 	event = "VeryLazy",
 
 	-- enabled = function()

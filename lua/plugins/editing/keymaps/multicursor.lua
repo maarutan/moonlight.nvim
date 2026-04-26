@@ -14,10 +14,14 @@ return {
 	{
 		"<Esc>",
 		function()
-      vim.cmd("nohlsearch")
+			vim.cmd("nohlsearch")
 
 			if not mc.hasCursors() then
-				vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
+				vim.api.nvim_feedkeys(
+					vim.api.nvim_replace_termcodes("<Esc>", true, false, true),
+					"n",
+					false
+				)
 				return
 			end
 

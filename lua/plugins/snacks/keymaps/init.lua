@@ -2,13 +2,6 @@ local icons = require("utils.constants.icons")
 local merge = require("utils.table").merge
 local os = require("utils.operating_system")
 
-local which = require("utils.which")
-if not which:is_module_exists("snacks") then
-	return
-end
-
-local Snacks = require("snacks")
-
 return merge({
 	{
 		"<leader>ff",
@@ -77,7 +70,10 @@ return merge({
 	{
 		"<leader>fR",
 		function()
-			Snacks.picker.recent({ filter = { cwd = true }, confirm = { "edit", "tcd" } })
+			Snacks.picker.recent({
+				filter = { cwd = true },
+				confirm = { "edit", "tcd" },
+			})
 		end,
 		icon = { icon = icons.ui.find },
 		desc = "Recent in CWD & cd",
@@ -96,7 +92,7 @@ return merge({
 			Snacks.picker.colorschemes()
 		end,
 		desc = "Find Colorscheme",
-		icon = { icon = icons.ui.color },
+		icon = { icon = icons.ui.drawing_pen },
 	},
 
 	-- Notifications
@@ -147,6 +143,14 @@ return merge({
 		desc = "Git diff",
 		icon = { icon = icons.git.git },
 	},
+	{
+		"<leader>gb",
+		function()
+			Snacks.picker.git_branches()
+		end,
+		desc = "Git Commit",
+		icon = { icon = icons.git.git },
+	},
 
 	-- Dashboard
 
@@ -156,6 +160,6 @@ return merge({
 			Snacks.dashboard.open()
 		end,
 		desc = "Dashboard",
-		icon = { icon = icons.ui.dashboard },
+		icon = { icon = icons.dashboard },
 	},
 })

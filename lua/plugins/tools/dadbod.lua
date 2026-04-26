@@ -27,7 +27,11 @@ return {
 					counter = counter + 1
 					if counter == 5 then
 						counter = 0
-						api.nvim_feedkeys(api.nvim_replace_termcodes("<Left>", true, false, true), "n", false)
+						api.nvim_feedkeys(
+							api.nvim_replace_termcodes("<Left>", true, false, true),
+							"n",
+							false
+						)
 					else
 						api.nvim_feedkeys(
 							api.nvim_replace_termcodes("<Plug>(DBUI_SelectLine)", true, false, true),
