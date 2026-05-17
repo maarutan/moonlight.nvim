@@ -47,6 +47,10 @@ return {
 		end
 		vim_item.menu = "    [ " .. menu_label .. " ]"
 
+		if raw_kind then
+			vim_item.menu_hl_group = "CmpItemKind" .. raw_kind
+		end
+
 		return vim_item
 	end,
 }
