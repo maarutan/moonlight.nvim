@@ -21,6 +21,7 @@ return {
 	require("plugins.editing.todo_comments"),
 	require("plugins.editing.ufo"),
 	require("plugins.editing.bufdelete"),
+	require("plugins.editing.lsp_kind"),
 	require("plugins.editing.auto_complete"),
 	require("plugins.editing.comments"),
 

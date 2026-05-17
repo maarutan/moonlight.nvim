@@ -1,3 +1,4 @@
+-- plugins/editing/auto_complete/init.lua
 return {
 	"hrsh7th/nvim-cmp",
 	version = "*",
@@ -18,7 +19,6 @@ return {
 		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 		cmp.setup({
-			-- ui
 			window = require("plugins.editing.auto_complete.modules.window"),
 			mapping = require("plugins.editing.auto_complete.modules.mappings.default"),
 			formatting = require("plugins.editing.auto_complete.modules.formatting"),
@@ -26,22 +26,20 @@ return {
 			experimental = {
 				ghost_text = false,
 			},
-
-			cmp.setup.cmdline(
-				":",
-				require("plugins.editing.auto_complete.modules.mappings.cmdline")
-			),
-			cmp.setup.cmdline(
-				{ "/", "?" },
-				require("plugins.editing.auto_complete.modules.mappings.finder")
-			),
 		})
+
+		cmp.setup.cmdline(":", require("plugins.editing.auto_complete.modules.mappings.cmdline"))
+
+		cmp.setup.cmdline(
+			{ "/", "?" },
+			require("plugins.editing.auto_complete.modules.mappings.finder")
+		)
+
 		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
-		--commands
 		vim.cmd([[
-            cnoremap <C-j> <C-n>
-            cnoremap <C-k> <C-p>
-        ]])
+			cnoremap <C-j> <C-n>
+			cnoremap <C-k> <C-p>
+		]])
 	end,
 }
