@@ -17,8 +17,14 @@ return {
 	config = function()
 		local cmp = require("cmp")
 		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+		local luasnip = require("luasnip")
 
 		cmp.setup({
+			snippet = {
+				expand = function(args)
+					luasnip.lsp_expand(args.body)
+				end,
+			},
 			window = require("plugins.editing.auto_complete.modules.window"),
 			mapping = require("plugins.editing.auto_complete.modules.mappings.default"),
 			formatting = require("plugins.editing.auto_complete.modules.formatting"),
@@ -30,10 +36,7 @@ return {
 
 		cmp.setup.cmdline(":", require("plugins.editing.auto_complete.modules.mappings.cmdline"))
 
-		cmp.setup.cmdline(
-			{ "/", "?" },
-			require("plugins.editing.auto_complete.modules.mappings.finder")
-		)
+		cmp.setup.cmdline({ "/", "?" }, require("plugins.editing.auto_complete.modules.mappings.finder"))
 
 		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 

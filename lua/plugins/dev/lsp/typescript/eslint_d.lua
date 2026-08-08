@@ -9,6 +9,7 @@ if not which:is_exists("eslint_d") then
 	return
 end
 
+lint.linters_by_ft = lint.linters_by_ft or {}
 lint.linters_by_ft.javascript = { "eslint_d" }
 lint.linters_by_ft.typescript = { "eslint_d" }
 lint.linters_by_ft.javascriptreact = { "eslint_d" }

@@ -9,9 +9,8 @@ if not which:is_exists("selene") then
 	return
 end
 
-lint.linters_by_ft = {
-	lua = { "selene" },
-}
+lint.linters_by_ft = lint.linters_by_ft or {}
+lint.linters_by_ft.lua = { "selene" }
 
 vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
 	callback = function()

@@ -55,5 +55,6 @@ return merge(
 	require("plugins.navigation.keymaps"),
 	require("plugins.snacks.keymaps"),
 	require("plugins.tools.keymaps"),
+	require("plugins.ai.keymaps"),
 	require("plugins.dev.keymaps")
 )

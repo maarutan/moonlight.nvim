@@ -38,6 +38,7 @@ return {
 
 	-- Ai
 	require("plugins.ai.windsurf"),
+	require("plugins.ai.gpt_codex"),
 
 	-- Ui
 	require("plugins.ui.web_devicons"),

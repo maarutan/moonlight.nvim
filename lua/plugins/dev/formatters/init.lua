@@ -19,6 +19,7 @@ return {
 			markdown = { "prettier" },
 			json = { "prettier" },
 			jsonc = { "prettier" },
+			rust = { "rustfmt" },
 		},
 
 		format_on_save = {

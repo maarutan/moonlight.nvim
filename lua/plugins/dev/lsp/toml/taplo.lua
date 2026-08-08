@@ -1,14 +1,10 @@
-local which = require("utils.which")
 local lsp = require("utils.lsp")
-local tool = "taplo"
 
-if not which:is_exists("taplo") then
-	return
-end
-
-vim.lsp.config(tool, {
-	capabilities = lsp.capabilities(),
-	filetypes = { "toml" },
+lsp.setup_if_executable({
+	name = "taplo",
+	executable = "taplo",
+	config = {
+		filetypes = { "toml" },
+		root_markers = { ".taplo.toml", "taplo.toml", ".git" },
+	},
 })
-
-vim.lsp.enable(tool)

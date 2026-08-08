@@ -7,7 +7,7 @@ return {
 			local options = require("core.options")
 			local size = 20
 
-			if options.termianl_direction == "vertical" then
+			if options.terminal_direction == "vertical" then
 				size = 50
 			end
 
@@ -50,10 +50,12 @@ return {
 					html = "xdg-open $dir/$fileName",
 					c = "gcc $dir/$fileName -o $dir/output && $dir/output && rm $dir/output",
 					cpp = "g++ $dir/$fileName -o $dir/output && $dir/output && rm $dir/output",
+					rs = "cargo run",
 				},
 
 				extensions = {
 					python = { "py" },
+					rs = { "rs" },
 					lua = { "lua" },
 					sh = { "sh" },
 					zsh = { "zsh" },

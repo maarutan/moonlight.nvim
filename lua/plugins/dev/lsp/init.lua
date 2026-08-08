@@ -6,6 +6,21 @@ return {
 	},
 	config = function()
 		local icons = require("utils.constants.icons")
+		local servers = {
+			"plugins.dev.lsp.python",
+			"plugins.dev.lsp.lua",
+			"plugins.dev.lsp.typescript",
+			"plugins.dev.lsp.html",
+			"plugins.dev.lsp.css",
+			"plugins.dev.lsp.emmets",
+			"plugins.dev.lsp.json",
+			"plugins.dev.lsp.yaml",
+			"plugins.dev.lsp.toml",
+			"plugins.dev.lsp.sh",
+			"plugins.dev.lsp.markdown",
+			"plugins.dev.lsp.rust",
+			"plugins.dev.lsp.c_cpp",
+		}
 
 		for type, icon in pairs(icons.diagnostic) do
 			local hl = "DiagnosticSign" .. type
@@ -28,27 +43,8 @@ return {
 			},
 		})
 
-		--- Python
-		require("plugins.dev.lsp.python")
-
-		--- Lua
-		require("plugins.dev.lsp.lua")
-
-		--- HTML, CSS, JS
-		require("plugins.dev.lsp.typescript")
-		require("plugins.dev.lsp.html")
-		require("plugins.dev.lsp.css")
-		require("plugins.dev.lsp.emmets")
-
-		--- JSON, YAML, TOML
-		require("plugins.dev.lsp.json")
-		require("plugins.dev.lsp.yaml")
-		require("plugins.dev.lsp.toml")
-
-		--- Bash Zsh
-		require("plugins.dev.lsp.sh")
-
-		--- Markdown
-		require("plugins.dev.lsp.markdown")
+		for _, server in ipairs(servers) do
+			require(server)
+		end
 	end,
 }

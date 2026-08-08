@@ -5,7 +5,9 @@ return {
 		build = ":TSUpdate",
 
 		config = function()
-			require("nvim-treesitter").setup({
+			local ts = require("nvim-treesitter")
+
+			ts.setup({
 				install_dir = vim.fn.stdpath("data") .. "/site",
 			})
 
@@ -14,6 +16,50 @@ return {
 					[".*/hypr/.*%.conf"] = "hyprlang",
 				},
 			})
+
+			local parsers = {
+				"c",
+				"cpp",
+				"regex",
+				"lua",
+				"vim",
+				"vimdoc",
+				"query",
+				"markdown",
+				"markdown_inline",
+				"python",
+				"javascript",
+				"typescript",
+				"html",
+				"htmldjango",
+				"css",
+				"bash",
+				"json",
+				"sql",
+				"dockerfile",
+				"yaml",
+				"toml",
+				"rust",
+				"go",
+				"todotxt",
+				"hyprlang",
+				"vue",
+				"tsx",
+				"svelte",
+				"astro",
+			}
+
+			local installed = require("nvim-treesitter.config").get_installed()
+
+			local missing = vim.iter(parsers)
+				:filter(function(lang)
+					return not vim.tbl_contains(installed, lang)
+				end)
+				:totable()
+
+			if #missing > 0 then
+				ts.install(missing)
+			end
 
 			local aug = vim.api.nvim_create_augroup("MyTreeSitter", { clear = true })
 

@@ -7,7 +7,7 @@ local const = require("utils.constants")
 
 vim.loader.enable()
 local border = "rounded" -- single / double / rounded
-local termianl_direction = "horizontal" -- horizontal / vertical / float
+local terminal_direction = "horizontal" -- horizontal / vertical / float
 vim.opt.syntax = "off"
 vim.opt.mouse = ""
 vim.opt.number = true
@@ -92,5 +92,5 @@ vim.cmd([[cabbrev W w]])
 
 return {
 	border = border,
-	termianl_direction = termianl_direction,
+	termianl_direction = terminal_direction,
 }

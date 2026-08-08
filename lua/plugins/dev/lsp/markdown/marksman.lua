@@ -1,17 +1,13 @@
-local tool = "marksman"
 local lsp = require("utils.lsp")
-local which = require("utils.which")
 
-if not which:is_exists(tool) then
-	return
-end
-
-vim.lsp.config(tool, {
-	capabilities = lsp.capabilities(),
-	filetypes = { "markdown", "md" },
-	settings = {
-		marksman = {},
+lsp.setup_if_executable({
+	name = "marksman",
+	executable = "marksman",
+	config = {
+		filetypes = { "markdown", "markdown.mdx", "md" },
+		root_markers = { ".marksman.toml", ".git" },
+		settings = {
+			marksman = {},
+		},
 	},
 })
-
-vim.lsp.enable(tool)
