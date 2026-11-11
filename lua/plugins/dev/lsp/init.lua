@@ -20,6 +20,7 @@ return {
 			"plugins.dev.lsp.markdown",
 			"plugins.dev.lsp.rust",
 			"plugins.dev.lsp.c_cpp",
+			"plugins.dev.lsp.java",
 		}
 
 		for type, icon in pairs(icons.diagnostic) do

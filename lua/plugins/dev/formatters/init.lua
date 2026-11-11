@@ -4,26 +4,34 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "ruff_format" },
+
 			javascript = { "prettier" },
 			javascriptreact = { "prettier" },
 			typescript = { "prettier" },
 			typescriptreact = { "prettier" },
+
 			html = { "prettier" },
 			css = { "prettier" },
 			sh = { "shfmt" },
 			sass = { "sass-formater" },
 			scss = { "prettier" },
 			xml = { "xmlformat" },
+
 			c = { "clang-format" },
 			cpp = { "clang-format" },
+
 			markdown = { "prettier" },
 			json = { "prettier" },
 			jsonc = { "prettier" },
+
 			rust = { "rustfmt" },
+
+			-- Java: Eclipse JDTLS
+			java = {},
 		},
 
 		format_on_save = {
-			timeout_ms = 1000,
+			timeout_ms = 3000,
 			lsp_format = "fallback",
 		},
 	},

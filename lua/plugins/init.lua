@@ -70,4 +70,5 @@ return {
 	require("plugins.dev.formatters"),
 	require("plugins.dev.snippets"),
 	require("plugins.dev.tree_sitter"),
+	require("plugins.dev.ipynb"),
 }
